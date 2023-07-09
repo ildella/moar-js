@@ -9,13 +9,3 @@ cpd.report
 
 .build
 .idea
-
-dist/
-
-.serverless
-.kinesis-db
-
-.terraform
-terraform.tfstate*
-
-newrelic_agent.log

@@ -23,7 +23,10 @@
   },
   "devDependencies": {
     "depcheck": "1.4.3",
-    "moar-js-dev": "1.0.1",
-    "nodemon": "3.0.1"
+    "moar-js-dev": "1.0.1"
+  },
+  "dependencies": {
+    "axios": "1.4.0",
+    "exstream.js": "0.23.0"
   }
 }
