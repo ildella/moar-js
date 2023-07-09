@@ -1,0 +1,29 @@
+{
+  "name": "name-your-project",
+  "version": "0.1.0",
+  "description": "Something",
+  "license": "MIT",
+  "author": {
+    "name": "Your name here"
+  },
+  "keywords": [],
+  "engines": {
+    "node": ">=16.10"
+  },
+  "scripts": {
+    "audit.production": "yarn audit --groups dependencies",
+    "coverage": "jest --coverage",
+    "depcheck": "depcheck",
+    "lint": "eslint . --max-warnings 0",
+    "test": "jest",
+    "test.watch": "yarn test --watch",
+    "mock": "nodemon src --mock",
+    "dev": "nodemon src",
+    "start": "node src"
+  },
+  "devDependencies": {
+    "depcheck": "1.4.3",
+    "moar-js-dev": "1.0.1",
+    "nodemon": "3.0.1"
+  }
+}
