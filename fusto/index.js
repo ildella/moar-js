@@ -4,6 +4,7 @@
 
 const __ = require('exstream.js')
 const {setTimeout: sleep} = require('timers/promises')
+const extreamErrorToJson = require('./extream-error-to-json')
 
 __.extend('toMap', function () {
   return this.map(json => new Map(Object.entries(json)))
@@ -29,4 +30,5 @@ module.exports = {
   pipeline: __.pipeline,
   curry: __.curry,
   nil: __.nil,
+  extreamErrorToJson,
 }

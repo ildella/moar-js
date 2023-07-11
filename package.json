@@ -1,12 +1,14 @@
 {
   "name": "moar-js",
   "version": "0.1.0",
-  "description": "Simple javascript files I use across projects",
+  "description": "Simple JavaScript files I use across projects",
   "license": "MIT",
   "author": {
     "name": "Daniele Dellafiore"
   },
-  "keywords": [],
+  "keywords": [
+    "JavaScript"
+  ],
   "engines": {
     "node": ">=16.10"
   },
@@ -28,17 +30,17 @@
     "depcheck": "1.4.3",
     "fastify": "4.19.2",
     "moar-js-dev": "1.0.1",
+    "tracer": "1.1.6",
     "ws": "8.13.0"
   },
-  "dependencies": {
-    "axios": "1.4.0",
-    "exstream.js": "0.23.0"
-  },
   "peerDependencies": {
+    "axios": "1.4.0",
+    "exstream.js": "0.23.0",
     "@fastify/cors": "8.3.0",
     "@fastify/one-line-logger": "1.2.0",
     "@fastify/sensible": "5.2.0",
     "fastify": "4.19.2",
+    "tracer": "1.1.6",
     "ws": "8.13.0"
   }
 }

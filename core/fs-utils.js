@@ -29,9 +29,10 @@ const writeJson = async (path, json) => {
 
 const ignoreErrorWhenFolderExists = error => {
   if (error.code !== 'EEXIST') {
+    // should throw the error...
     console.error(error.code, error)
   }
-  console.log('Folder exists, moving on...')
+  // console.log('Folder exists, moving on...')
 }
 
 const mkFolder = folderName => mkdir(
