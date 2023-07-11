@@ -9,7 +9,7 @@ module.exports = socket => (push, next) => {
   })
 
   socket.on('error', error => {
-    console.warn('socket error:', error)
+    // console.warn('socket error:', error)
     push(new Error(error.message, {cause: error}))
   })
 

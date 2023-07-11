@@ -24,6 +24,8 @@
     "start": "node src"
   },
   "devDependencies": {
+    "axios": "1.4.0",
+    "exstream.js": "0.23.0",
     "@fastify/cors": "8.3.0",
     "@fastify/one-line-logger": "1.2.0",
     "@fastify/sensible": "5.2.0",
