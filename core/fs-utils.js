@@ -1,5 +1,6 @@
 const {EOL} = require('os')
 const {readFile, writeFile, mkdir} = require('fs/promises')
+const {curry} = require('../fusto')
 
 const readText = async (path, options) => {
   const buffer = await readFile(path, options)
@@ -41,8 +42,8 @@ const mkFolder = folderName => mkdir(
 
 module.exports = {
   readJson,
-  writeJson,
+  writeJson: curry(writeJson),
   mkFolder,
   readText,
-  writeText,
+  writeText: curry(writeText),
 }
