@@ -1,6 +1,6 @@
 {
   "name": "moar-js",
-  "version": "0.2.0",
+  "version": "0.1.1",
   "description": "Simple JavaScript files I use across projects",
   "license": "MIT",
   "author": {
@@ -26,24 +26,24 @@
     "start": "node src"
   },
   "devDependencies": {
-    "axios": "1.4.0",
-    "exstream.js": "0.23.0",
     "@fastify/cors": "8.3.0",
     "@fastify/one-line-logger": "1.2.0",
     "@fastify/sensible": "5.2.0",
+    "axios": "1.4.0",
     "depcheck": "1.4.3",
-    "fastify": "4.19.2",
+    "exstream.js": "0.23.0",
+    "fastify": "4.20.0",
     "moar-js-dev": "1.0.1",
     "tracer": "1.1.6",
     "ws": "8.13.0"
   },
   "peerDependencies": {
-    "axios": "1.4.0",
-    "exstream.js": "0.23.0",
     "@fastify/cors": "8.3.0",
     "@fastify/one-line-logger": "1.2.0",
     "@fastify/sensible": "5.2.0",
-    "fastify": "4.19.2",
+    "axios": "1.4.0",
+    "exstream.js": "0.23.0",
+    "fastify": "4.20.0",
     "tracer": "1.1.6",
     "ws": "8.13.0"
   }
