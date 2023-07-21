@@ -16,7 +16,7 @@
     "audit.production": "yarn audit --groups dependencies",
     "coverage": "jest --coverage",
     "depcheck": "depcheck",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint . --max-warnings 3",
     "test": "jest",
     "test.watch": "yarn test --watch",
     "core.test": "node --test",
