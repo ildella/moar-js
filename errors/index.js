@@ -1,41 +1,40 @@
 const {pipeline, __} = require('../fusto')
 
+// eslint-disable-next-line max-lines-per-function
 const parseAxiosError = error => {
-  if (error.isAxiosError === true) {
-    const json = error.toJSON()
-    const {status, code, config} = json
-    const {
-      baseURL, url, method, headers, timeout,
-    } = config
-    if (code === 'ETIMEDOUT') return {
-      status: 408,
-      code,
-      message: 'Timed out.',
-      method,
-      baseURL,
-      url,
-      timeout,
-    }
-    if (status !== 400) return {
-      status,
-      code,
-      method,
-      baseURL,
-      url,
-      timeout,
-    }
-    const {response: {data}} = error
-    // console.log({status, code, data, baseURL, url ,method})
-    const {statusCode, error: dataError = {}, message} = data
-    const finalMessage = message || dataError.message || 'no message provided in the response, check the server logs' 
-    const humanReadableMessage =
-      `${status} <-- ${method} ${baseURL}/${url} || ${finalMessage}`
-    return {
-      status, code, message: humanReadableMessage, baseURL, url, method,
-    }
+  if (error.isAxiosError !== true) return error
+  const {status, code, config} = error.toJSON()
+  const basic = __([config]).pick([
+    'baseURL',
+    'url',
+    'method',
+    'timeout',
+    // 'headers',
+  ]).value()
+  if (code === 'ETIMEDOUT') return {
+    status: 408,
+    code,
+    message: 'Timed out.',
+    ...basic,
   }
-  console.log('NOT AXIOS ERROR :(')
-  return error
+  const {response: {data}} = error
+  const {
+    // statusCode,
+    error: dataError = {},
+    message,
+  } = data
+  const finalMessage =
+      message || dataError.message || 'no message provided in the response, check the server logs'
+  const {baseURL, method, url} = basic
+  const humanReadableMessage =
+      `${status} <-- ${method} ${baseURL}/${url} || ${finalMessage}`
+  // console.log({humanReadableMessage})
+  return {
+    status,
+    code,
+    message: humanReadableMessage,
+    ...basic,
+  }
 }
 
 const parseIncomingMessage = error => {
