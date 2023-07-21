@@ -2,6 +2,10 @@ const {EOL} = require('os')
 const {readFile, writeFile, mkdir} = require('fs/promises')
 const {curry} = require('../fusto')
 
+/*
+  eslint-disable security/detect-non-literal-fs-filename
+*/
+
 const readText = async (path, options) => {
   const buffer = await readFile(path, options)
   return buffer.toString()
@@ -31,7 +35,7 @@ const writeJson = async (path, json) => {
 const ignoreErrorWhenFolderExists = error => {
   if (error.code !== 'EEXIST') {
     // should throw the error...
-    console.error(error.code, error)
+    // console.error(error.code, error)
   }
   // console.log('Folder exists, moving on...')
 }

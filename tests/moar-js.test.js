@@ -1,5 +1,5 @@
-const {fastifyApp} = require('moar-js/http')
-const {__} = require('moar-js/fusto')
+const {fastifyApp} = require('../http')
+const {__} = require('../fusto')
 
 test('http / fastify app', done => {
   const instance = fastifyApp()
