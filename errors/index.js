@@ -5,7 +5,6 @@ const parseAxiosError = error => {
   if (error.isAxiosError !== true) return error
   const {status, code, config} = error.toJSON()
   const basic = __([config]).pick([
-    'baseURL',
     'url',
     'method',
     'timeout',
@@ -25,13 +24,12 @@ const parseAxiosError = error => {
   } = data
   const finalMessage =
       message || dataError.message || 'no message provided in the response, check the server logs'
-  const {baseURL, method, url} = basic
+  const {method, url} = basic
   const humanReadableMessage =
-      `${status} <-- ${method} ${baseURL}/${url} || ${finalMessage}`
+      `${status} <-- ${method} ${url} || ${finalMessage}`
   // console.log({humanReadableMessage})
   return {
     status,
-    code,
     message: humanReadableMessage,
     ...basic,
   }
