@@ -1,22 +1,30 @@
 const {pipeline, __} = require('../fusto')
 
-// eslint-disable-next-line max-lines-per-function
+// eslint-disable-next-line complexity
 const parseAxiosError = error => {
   if (error.isAxiosError !== true) return error
   const {status, code, config} = error.toJSON()
   const basic = __([config]).pick([
-    'url',
     'method',
+    'baseURL',
+    'url',
     'timeout',
     // 'headers',
   ]).value()
+  // console.log({...basic, status, code})
   if (code === 'ETIMEDOUT') return {
     status: 408,
     code,
     message: 'Timed out.',
     ...basic,
   }
-  const {response: {data}} = error
+  if (!error.response) return {
+    status, code, message: 'no response...', ...basic,
+  }
+  const {response} = error
+  // console.log(response.status)
+  // console.log(response.statusText)
+  const {data} = response
   const {
     // statusCode,
     error: dataError = {},
@@ -24,10 +32,9 @@ const parseAxiosError = error => {
   } = data
   const finalMessage =
       message || dataError.message || 'no message provided in the response, check the server logs'
-  const {method, url} = basic
+  const {method, url, baseURL} = basic
   const humanReadableMessage =
-      `${status} ${method} ${url} :: ${finalMessage}`
-  // console.log({humanReadableMessage})
+      `${status} ${method} ${baseURL}${url} :: ${finalMessage}`
   return {
     status,
     message: humanReadableMessage,
