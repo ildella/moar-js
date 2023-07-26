@@ -7,7 +7,7 @@ module.exports = client => {
   const source = __(websocketSource(client))
     .map(JSON.parse)
 
-  const invoices = source
+  const feed = source
     // .fork()
     .filter(json => !hasError(json))
     // .tap(item => debug(item))
@@ -18,7 +18,7 @@ module.exports = client => {
     .filter(hasError)
 
   return {
-    invoices,
+    feed,
     errors,
   }
 }
