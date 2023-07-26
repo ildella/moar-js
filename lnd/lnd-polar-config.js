@@ -10,9 +10,11 @@ module.exports = curry((polarNetwork, {
   host = '127.0.0.1',
   port = 8080,
   username,
+  macaroonType = 'readonly',
 }) => {
   const basePath = polarBasePath(polarNetwork)
-  const macaroonPath = `${basePath}/${username}/data/chain/bitcoin/regtest/admin.macaroon`
+  // const macaroonPath = `${basePath}/${username}/data/chain/bitcoin/regtest/admin.macaroon`
+  const macaroonPath = `${basePath}/${username}/data/chain/bitcoin/regtest/${macaroonType}.macaroon`
   const tlsPath = `${basePath}/${username}/tls.cert`
   const baseUrl = `${host}:${port}`
   const macaroon = readFileSync(macaroonPath).toString('hex')

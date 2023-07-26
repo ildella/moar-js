@@ -26,7 +26,7 @@ const parseAxiosError = error => {
       message || dataError.message || 'no message provided in the response, check the server logs'
   const {method, url} = basic
   const humanReadableMessage =
-      `${status} <-- ${method} ${url} || ${finalMessage}`
+      `${status} ${method} ${url} :: ${finalMessage}`
   // console.log({humanReadableMessage})
   return {
     status,
