@@ -12,11 +12,26 @@ const createWs = ({
     headers: {'Grpc-Metadata-Macaroon': macaroon},
   })
 
-const createHttp = ({baseUrl, cert, macaroon}) => httpJsonClient({
+const create = ({baseUrl, cert, macaroon}) => httpJsonClient({
   baseURL: `https://${baseUrl}`,
   httpsAgent: new https.Agent({rejectUnauthorized: false, cert}),
   headers: {'Grpc-Metadata-macaroon': macaroon},
 })
+
+const {parseAxiosError} = require('../errors')
+
+const createHttp = params => {
+  const instance = create(params)
+  instance.interceptors.response.use(
+    response => response,
+    error => {
+      const parsed = parseAxiosError(error)
+      // console.log(error.response.data)
+      return Promise.reject(parsed)
+    }
+  )
+  return instance
+}
 
 module.exports = {
   createWs,
