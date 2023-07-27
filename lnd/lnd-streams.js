@@ -1,10 +1,9 @@
-const {__} = require('../fusto')
-const websocketSource = require('./websocket-stream-source')
+const {__, websocketStreamSource} = require('../fusto')
 
 const hasError = json => Object.hasOwn(json, 'error')
 
 module.exports = client => {
-  const source = __(websocketSource(client))
+  const source = __(websocketStreamSource(client))
     .map(JSON.parse)
 
   const feed = source

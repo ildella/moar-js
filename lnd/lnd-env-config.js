@@ -11,7 +11,7 @@ module.exports = curry((future, {
   if (!macaroon) throw new Error('Configuration error: mising macaroon env var')
   const hexCertificate = process.env.LND_TLS_CERT
   if (!hexCertificate) throw new Error('Configuration error: mising cert env var')
-  console.log({macaroon, hexCertificate})
+  // console.log({macaroon, hexCertificate})
   const cert = Buffer.from(hexCertificate, 'hex').toString('utf8')
   return {macaroon, cert, baseUrl}
 })

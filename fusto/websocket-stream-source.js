@@ -1,4 +1,5 @@
-const {nil} = require('../fusto')
+const __ = require('exstream.js')
+const {nil} = __
 
 module.exports = socket => (push, next) => {
   socket.on('message', event => {
