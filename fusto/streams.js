@@ -1,4 +1,6 @@
-const {__, websocketStreamSource} = require('../fusto')
+const __ = require('exstream.js')
+
+const websocketStreamSource = require('./websocket-stream-source')
 
 const hasError = json => Object.hasOwn(json, 'error')
 
