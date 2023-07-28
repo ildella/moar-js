@@ -14,7 +14,6 @@ module.exports = {
   ...preset(),
   // projects: [
   //   '<rootDir>/tests/unit',
-  //   '<rootDir>/tests/db',
   //   '<rootDir>/tests/http',
   // ],
 }

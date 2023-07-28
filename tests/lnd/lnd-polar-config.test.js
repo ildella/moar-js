@@ -1,21 +1,7 @@
-// const assert = require('assert')
-// const {test} = require('node:test')
+const {lndPolarConfig} = require('../../lnd')
+const {buffer} = require('../../core')
 
-const lndPolarConfig = require('../../lnd/lnd-polar-config')
-
-const isHexString = string => {
-  const hexPattern = /^[0-9a-fA-F]+$/
-  return hexPattern.test(string)
-}
-
-const isValidUTF8 = str => {
-  try {
-    Buffer.from(str, 'utf8')
-    return true
-  } catch (error) {
-    return false
-  }
-}
+const {isValidHex, isValidUTF8} = buffer
 
 test('calling network by id', () => {
   const network = lndPolarConfig(3)
@@ -34,8 +20,8 @@ test('check content', () => {
   const network = lndPolarConfig(3)
   const {cert, macaroon} = network({username: 'alice'})
 
-  expect(isHexString(macaroon)).toBe(true)
-  expect(isHexString(cert)).toBe(false)
+  expect(isValidHex(macaroon)).toBe(true)
+  expect(isValidHex(cert)).toBe(false)
 
   const certUtf8 = Buffer.from(cert).toString('utf8')
   // console.log(certUtf8)

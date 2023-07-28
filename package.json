@@ -1,13 +1,19 @@
 {
   "name": "moar-js",
-  "version": "0.2.6",
+  "version": "0.3.0",
   "description": "Simple JavaScript files I use across projects",
   "license": "MIT",
   "author": {
     "name": "Daniele Dellafiore"
   },
   "keywords": [
-    "JavaScript"
+    "JavaScript",
+    "Library",
+    "Streams",
+    "Bitcoin Ligthing Network",
+    "LND",
+    "HTTP",
+    "Axios"
   ],
   "engines": {
     "node": ">=16.10"

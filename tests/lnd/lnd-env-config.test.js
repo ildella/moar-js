@@ -1,13 +1,7 @@
 const {lndEnvConfig} = require('../../lnd')
+const {buffer} = require('../../core')
 
-const isValidUTF8 = str => {
-  try {
-    Buffer.from(str, 'utf8')
-    return true
-  } catch (error) {
-    return false
-  }
-}
+const {isValidUTF8} = buffer
 
 test('calling network by id', () => {
   const network = lndEnvConfig()

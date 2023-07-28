@@ -8,7 +8,6 @@ module.exports = client => {
 
   const feed = source
     .filter(json => !hasError(json))
-    .pluck('result')
 
   const errors = source
     .observe()

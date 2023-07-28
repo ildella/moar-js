@@ -1,6 +1,6 @@
 const {pipeline, __} = require('../fusto')
 
-// eslint-disable-next-line complexity
+// eslint-disable-next-line complexity, max-lines-per-function
 const parseAxiosError = error => {
   if (error.isAxiosError !== true) return error
   const {status, code, config} = error.toJSON()
@@ -19,7 +19,7 @@ const parseAxiosError = error => {
     ...basic,
   }
   if (!error.response) return {
-    status, code, message: 'no response...', ...basic,
+    status, code, message: 'HTTP error with no `response` property.', ...basic,
   }
   const {response} = error
   // console.log(response.status)
@@ -31,7 +31,9 @@ const parseAxiosError = error => {
     message,
   } = data
   const finalMessage =
-      message || dataError.message || 'no message provided in the response, check the server logs'
+      message
+      || dataError.message
+      || 'No message provided in the response. Hope for the server logs'
   const {method, url, baseURL} = basic
   const humanReadableMessage =
       `${status} ${method} ${baseURL}${url} :: ${finalMessage}`

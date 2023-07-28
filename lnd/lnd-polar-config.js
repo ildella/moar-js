@@ -6,7 +6,6 @@ const {curry} = require('../fusto')
 const polarBasePath = networkNumber => `${homedir()}/.polar/networks/${networkNumber}/volumes/lnd/`
 
 module.exports = curry((polarNetwork, {
-  // basePath = polarBasePath(1),
   host = '127.0.0.1',
   port = 8080,
   username,
