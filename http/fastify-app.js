@@ -6,7 +6,6 @@ module.exports = ({
   logLevel = 'debug',
   loggerTransportTarget = 'pino-pretty',
   name,
-  // loggerTransportTarget = '@fastify/one-line-logger',
 } = {}) => {
   const instance = fastify({
     ignoreTrailingSlash: true,
