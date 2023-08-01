@@ -5,12 +5,15 @@ const httpJsonClient = require('../axios/http-json-client')
 
 const createWs = ({
   baseUrl, macaroon, cert, method = 'GET',
-}, endpoint) =>
-  new WebSocket(`wss://${baseUrl}${endpoint}?method=${method}`, {
+}, endpoint) => {
+  const wsConnectionString = `wss://${baseUrl}${endpoint}?method=${method}`
+  console.log({wsConnectionString})
+  return new WebSocket(wsConnectionString, {
     rejectUnauthorized: false,
     cert,
     headers: {'Grpc-Metadata-Macaroon': macaroon},
   })
+}
 
 const create = ({baseUrl, cert, macaroon}) => httpJsonClient({
   baseURL: `https://${baseUrl}`,

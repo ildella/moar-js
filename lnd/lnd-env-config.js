@@ -5,7 +5,7 @@ module.exports = curry((future, {
   port = process.env.LND_PORT,
   macaroonType = 'readonly',
 }) => {
-  if (!host || !port) throw new Error('Configuration error: mising host or port')
+  if (!host || !port) throw new Error('Configuration error: missing host or port')
   const baseUrl = `${host}:${port}`
   const macaroon = process.env[`LND_${macaroonType.toUpperCase()}_MACAROON`]
   if (!macaroon) throw new Error('Configuration error: mising macaroon env var')
