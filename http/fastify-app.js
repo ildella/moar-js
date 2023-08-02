@@ -31,9 +31,5 @@ module.exports = ({
     // methods: ['GET', 'PUT', 'POST', 'DELETE'],
   })
   instance.register(sensible)
-  // instance.setErrorHandler((error, request, reply) => {
-  //   console.log(error)
-  //   reply.send(error)
-  // })
   return instance
 }
