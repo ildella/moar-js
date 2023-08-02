@@ -18,6 +18,11 @@ const parseAxiosError = error => {
     message: 'Timed out.',
     ...basic,
   }
+  if (code === 'EAI_AGAIN') return {
+    code,
+    message: error.message,
+    ...basic,
+  }
   if (!error.response) return {
     status, code, message: 'HTTP error with no `response` property.', ...basic,
   }

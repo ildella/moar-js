@@ -8,7 +8,6 @@ const safeHttpClient = (client, params) => {
     response => response,
     error => {
       const parsed = parseAxiosError(error)
-      // console.log(error.response.data)
       return Promise.reject(parsed)
     }
   )
