@@ -9,6 +9,7 @@ module.exports = ({
 } = {}) => {
   const instance = fastify({
     ignoreTrailingSlash: true,
+    disableRequestLogging: true,
     logger: {
       level: logLevel,
       redact: ['req.headers.authorization'],
