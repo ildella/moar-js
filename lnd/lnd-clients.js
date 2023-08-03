@@ -7,7 +7,7 @@ const createWs = ({
   baseUrl, macaroon, cert, method = 'GET',
 }, endpoint) => {
   const wsConnectionString = `wss://${baseUrl}${endpoint}?method=${method}`
-  console.log({wsConnectionString})
+  // console.log({wsConnectionString})
   return new WebSocket(wsConnectionString, {
     rejectUnauthorized: false,
     cert,

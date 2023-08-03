@@ -14,8 +14,8 @@ module.exports = socket => (push, next) => {
     push(new Error(error.message, {cause: error}))
   })
 
-  socket.on('close', event => {
-    console.info('socket close event', event)
+  socket.on('close', () => {
+    // console.info('socket close event')
     push(null, nil)
   })
 }
