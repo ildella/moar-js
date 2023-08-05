@@ -7,15 +7,18 @@ const standard = ({level = 'info'} = {}) => tracer.colorConsole({
   level,
 })
 
+const defaultDateFormat = 'yy/mm/dd, HH:MM:ss'
+
 const local = ({level = 'info'} = {}) => tracer.colorConsole({
   // format: [
   //   '{{timestamp}} {{message}} (in {{file}}:{{line}})',
   // ],
   format: [
-    '{{file}}:{{line}} || {{message}}',
+    '{{timestamp}} | {{file}}:{{line}} | {{message}}',
   ],
   level,
-  dateformat: 'HH:MM:ss',
+  // dateformat: 'HH:MM:ss',
+  dateformat: defaultDateFormat,
   transport: [
     data => { process.stdout.write(`${data.output}\n`) },
   ],
