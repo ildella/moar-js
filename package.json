@@ -20,16 +20,17 @@
   },
   "scripts": {
     "audit.production": "yarn audit --groups dependencies",
-    "coverage": "jest --coverage",
     "depcheck": "depcheck",
     "lint": "eslint . --max-warnings 3",
-    "test": "jest",
-    "test.watch": "yarn test --watch",
     "core.test": "node --test",
     "core.test.watch": "node --test --watch tests/**/*.test.js tests/*.test.js",
+    "coverage": "jest --coverage",
+    "test": "jest",
+    "test.watch": "yarn test --watch",
     "mock": "nodemon src --mock",
     "dev": "nodemon src",
-    "start": "node src"
+    "start": "node src",
+    "release": "dev-github-npm-release-and-publish.sh"
   },
   "devDependencies": {
     "@fastify/cors": "8.3.0",
