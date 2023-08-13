@@ -20,7 +20,9 @@ const local = ({level = 'info'} = {}) => tracer.colorConsole({
   // dateformat: 'HH:MM:ss',
   dateformat: defaultDateFormat,
   transport: [
-    data => { process.stdout.write(`${data.output}\n`) },
+    data => {
+      process.stdout.write(`${data.output}\n`)
+    },
   ],
 })
 

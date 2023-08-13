@@ -15,3 +15,15 @@ module.exports = curry((future, {
   const cert = Buffer.from(hexCertificate, 'hex').toString('utf8')
   return {macaroon, cert, baseUrl}
 })
+
+// const lndConfigurationSchema = {
+//   type: 'object',
+//   properties: {
+//     host: {type: 'string'},
+//     port: {type: 'number'},
+//     username: {type: 'string', minLength: 3},
+//     macaroon: {type: 'string', minLength: 20},
+//     cert: {type: 'string', minLength: 20},
+//   },
+//   required: [],
+// }

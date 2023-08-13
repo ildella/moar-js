@@ -8,10 +8,13 @@ module.exports = ({
   port = 80,
   timeout = 2500,
   headers = {},
-  httpsAgent = new https.Agent({keepAlive: true}),
+  secure = true,
+  rejectUnauthorized = secure !== false,
+  protocol = secure === true ? 'https' : 'http',
+  httpsAgent = new https.Agent({keepAlive: true, rejectUnauthorized}),
   httpAgent = new http.Agent({keepAlive: true}),
 } = {}) => axios.create({
-  baseURL: baseURL || `http://${hostname}:${port}`,
+  baseURL: baseURL || `${protocol}://${hostname}:${port}`,
   timeout,
   httpAgent,
   httpsAgent,
@@ -22,6 +25,5 @@ module.exports = ({
     'Accept-Encoding': 'gzip, deflate',
     'Content-Type': 'application/json; charset=utf-8',
     ...headers,
-    // 'connection': 'keep-alive',
   },
 })
