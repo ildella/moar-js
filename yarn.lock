@@ -318,10 +318,10 @@
   resolved "https://registry.yarnpkg.com/@eslint-community/regexpp/-/regexpp-4.6.2.tgz#1816b5f6948029c5eaacb0703b850ee0cb37d8f8"
   integrity sha512-pPTNuaAG3QMH+buKyBIGJs3g/S5y0caxw0ygM3YyE6yJFySwiGGSzA+mM3KJ8QQvzeLh3blwgSonkFjgQdxzMw==
 
-"@eslint/eslintrc@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-2.1.1.tgz#18d635e24ad35f7276e8a49d135c7d3ca6a46f93"
-  integrity sha512-9t7ZA7NGGK8ckelF0PQCfcxIUzs1Md5rrO6U/c+FIQNanea5UZC0wqKXH4vHBccmu4ZJgZ2idtPeW7+Q2npOEA==
+"@eslint/eslintrc@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-2.1.2.tgz#c6936b4b328c64496692f76944e755738be62396"
+  integrity sha512-+wvgpDsrB1YqAMdEUCcnTlpfVBH7Vqn6A/NT3D8WVXFIaKMlErPIZT3oCIAVCOtarRpMtelZLqJeU3t7WY6X6g==
   dependencies:
     ajv "^6.12.4"
     debug "^4.3.2"
@@ -333,10 +333,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@^8.46.0":
-  version "8.46.0"
-  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.46.0.tgz#3f7802972e8b6fe3f88ed1aabc74ec596c456db6"
-  integrity sha512-a8TLtmPi8xzPkCbp/OGFUo5yhRkHM2Ko9kOWP4znJr0WAhWyThaw3PnwX4vOTWOAMsV2uRt32PPDcEz63esSaA==
+"@eslint/js@^8.47.0":
+  version "8.47.0"
+  resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.47.0.tgz#5478fdf443ff8158f9de171c704ae45308696c7d"
+  integrity sha512-P6omY1zv5MItm93kLM8s2vr1HICJH8v0dvddDhysbIuZ+vcjOHg5Zbkf1mTkcmi2JA9oBG2anOkRnW8WJTS8Og==
 
 "@fastify/ajv-compiler@^3.5.0":
   version "3.5.0"
@@ -1538,10 +1538,10 @@ eslint-config-node-moar-test@0.1.3:
   resolved "https://registry.yarnpkg.com/eslint-config-node-moar-test/-/eslint-config-node-moar-test-0.1.3.tgz#3c21cf867a397b9bcfeb3bd54d394c5ff6f43ec0"
   integrity sha512-soln6wAl1P302vnHdJ9Z6yWjt+z6mwdKy3eWhfl/g30dSuuTdnJLyLRBNeWCk+h+0A+zzLbivxIgIxiEACg9zw==
 
-eslint-config-node-moar@0.9.3:
-  version "0.9.3"
-  resolved "https://registry.yarnpkg.com/eslint-config-node-moar/-/eslint-config-node-moar-0.9.3.tgz#68271a69bdf2f576715f4d396ca5490cb7897f09"
-  integrity sha512-Qq90bH1+3ZqE5T8ZWqyi2ZMQZGRhZh2AKw1gwgUGA906DvqEu5NhU/7mjCMVA32K04CG6UFRNgWpzMuYjIUOug==
+eslint-config-node-moar@0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-node-moar/-/eslint-config-node-moar-0.10.0.tgz#66944da747426e1736fc4cfcfc6c75299f6fa292"
+  integrity sha512-QTkwtBXnJlow7+CkGiNze0dAENSm+PD8qxHa0Nhd1Lt5xR3qSOfzX93CyI0VuHC6ksReRaT6sW62FUGyBtOV1w==
 
 eslint-plugin-es@^3.0.0:
   version "3.0.1"
@@ -1592,10 +1592,10 @@ eslint-plugin-security@1.7.1:
   dependencies:
     safe-regex "^2.1.1"
 
-eslint-plugin-sonarjs@0.19.0:
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.19.0.tgz#6654bc1c6d24c2183891b8bfe1175004dbba1e3c"
-  integrity sha512-6+s5oNk5TFtVlbRxqZN7FIGmjdPCYQKaTzFPmqieCmsU1kBYDzndTeQav0xtQNwZJWu5awWfTGe8Srq9xFOGnw==
+eslint-plugin-sonarjs@0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.20.0.tgz#215529e6e89c5c9b5cb6af9e7ef9a1ce45c53bb0"
+  integrity sha512-BRhZ7BY/oTr6DDaxvx58ReTg7R+J8T+Y2ZVGgShgpml25IHBTIG7EudUtHuJD1zhtMgUEt59x3VNvUQRo2LV6w==
 
 eslint-plugin-unicorn@48.0.1:
   version "48.0.1"
@@ -1651,20 +1651,20 @@ eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.1.tgz#c22c48f48942d08ca824cc526211ae400478a994"
   integrity sha512-pZnmmLwYzf+kWaM/Qgrvpen51upAktaaiI01nsJD/Yr3lMOdNtq0cxkrrg16w64VtisN6okbs7Q8AfGqj4c9fA==
 
-eslint-visitor-keys@^3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.2.tgz#8c2095440eca8c933bedcadf16fefa44dbe9ba5f"
-  integrity sha512-8drBzUEyZ2llkpCA67iYrgEssKDUu68V8ChqqOfFupIaG/LCVPUT+CoGJpT77zJprs4T/W7p07LP7zAIMuweVw==
+eslint-visitor-keys@^3.4.3:
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz#0cd72fe8550e3c2eae156a96a4dddcd1c8ac5800"
+  integrity sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==
 
-eslint@8.46.0:
-  version "8.46.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.46.0.tgz#a06a0ff6974e53e643acc42d1dcf2e7f797b3552"
-  integrity sha512-cIO74PvbW0qU8e0mIvk5IV3ToWdCq5FYG6gWPHHkx6gNdjlbAYvtfHmlCMXxjcoVaIdwy/IAt3+mDkZkfvb2Dg==
+eslint@8.47.0:
+  version "8.47.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-8.47.0.tgz#c95f9b935463fb4fad7005e626c7621052e90806"
+  integrity sha512-spUQWrdPt+pRVP1TTJLmfRNJJHHZryFmptzcafwSvHsceV81djHOdnEeDmkdotZyLNjDhrOasNK8nikkoG1O8Q==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@eslint-community/regexpp" "^4.6.1"
-    "@eslint/eslintrc" "^2.1.1"
-    "@eslint/js" "^8.46.0"
+    "@eslint/eslintrc" "^2.1.2"
+    "@eslint/js" "^8.47.0"
     "@humanwhocodes/config-array" "^0.11.10"
     "@humanwhocodes/module-importer" "^1.0.1"
     "@nodelib/fs.walk" "^1.2.8"
@@ -1675,7 +1675,7 @@ eslint@8.46.0:
     doctrine "^3.0.0"
     escape-string-regexp "^4.0.0"
     eslint-scope "^7.2.2"
-    eslint-visitor-keys "^3.4.2"
+    eslint-visitor-keys "^3.4.3"
     espree "^9.6.1"
     esquery "^1.4.2"
     esutils "^2.0.2"
@@ -2759,6 +2759,11 @@ just-curry-it@5.3.0:
   resolved "https://registry.yarnpkg.com/just-curry-it/-/just-curry-it-5.3.0.tgz#1463602e932c5beb431a2a384dddcd48bb3c9c42"
   integrity sha512-silMIRiFjUWlfaDhkgSzpuAyQ6EX/o09Eu8ZBfmFwQMbax7+LQzeIU2CBrICT6Ne4l86ITCGvUCBpCubWYy0Yw==
 
+just-pick@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/just-pick/-/just-pick-4.2.0.tgz#fb82efb385f9bd8152d2cc5edcd6834b186d8e5f"
+  integrity sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==
+
 kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
@@ -2943,14 +2948,14 @@ mnemonist@0.39.5:
   dependencies:
     obliterator "^2.0.1"
 
-moar-js-dev@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/moar-js-dev/-/moar-js-dev-1.2.0.tgz#72b35a8058069556cb2a31e68e12d583edf7260b"
-  integrity sha512-zjKTyLsAowMZZ4f9C1FjFxUralHar6Q3L5OY+3iBYdHQH/DA2VY9mIOEHUjEysVb+Q5GW4cokXCTgLfKDS5ntQ==
+moar-js-dev@1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/moar-js-dev/-/moar-js-dev-1.4.0.tgz#7a030220a73d85bd2bb64edb0809eaee7eb90994"
+  integrity sha512-5nC5KEWeUjMTX63lU49wwex+S8J4I2vM4fGSzat8x/cJ7TVp5rKnLRsgqp6TBRmzYyx5UPnBK53UcpjVFP8byg==
   dependencies:
     depcheck "1.4.3"
-    eslint "8.46.0"
-    eslint-config-node-moar "0.9.3"
+    eslint "8.47.0"
+    eslint-config-node-moar "0.10.0"
     eslint-config-node-moar-stricter "0.1.0"
     eslint-config-node-moar-test "0.1.3"
     eslint-plugin-fp "2.3.0"
@@ -2958,7 +2963,7 @@ moar-js-dev@1.2.0:
     eslint-plugin-node "11.1.0"
     eslint-plugin-promise "6.1.1"
     eslint-plugin-security "1.7.1"
-    eslint-plugin-sonarjs "0.19.0"
+    eslint-plugin-sonarjs "0.20.0"
     eslint-plugin-unicorn "48.0.1"
     jest "29.6.2"
     node-notifier "10.0.1"
