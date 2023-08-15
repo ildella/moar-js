@@ -1,6 +1,6 @@
 const {EOL} = require('os')
 const {readFile, writeFile, mkdir} = require('fs/promises')
-const {curry} = require('../fusto')
+const curry = require('just-curry-it')
 
 /*
   eslint-disable security/detect-non-literal-fs-filename

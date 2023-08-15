@@ -5,6 +5,10 @@ const {curry} = require('../fusto')
 
 const polarBasePath = networkNumber => `${homedir()}/.polar/networks/${networkNumber}/volumes/lnd/`
 
+/*
+  eslint-disable security/detect-non-literal-fs-filename
+*/
+
 module.exports = curry((polarNetwork, {
   host = 'localhost',
   port = '8081',
