@@ -1,4 +1,5 @@
-const {curry} = require('../fusto')
+const curry = require('just-curry-it')
+
 const {parseAxiosError} = require('../errors')
 
 const safeHttpClient = (client, params) => {
