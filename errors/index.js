@@ -1,4 +1,4 @@
-const {pipeline, __} = require('../fusto')
+const {__} = require('../fusto')
 
 // eslint-disable-next-line complexity, max-lines-per-function
 const parseAxiosError = error => {
@@ -64,19 +64,7 @@ const parseIncomingMessage = error => {
   }
 }
 
-const aggregateReport = ({field = 'message'} = {}) => pipeline()
-  .reduce((aggregate, item) => {
-    // console.log({item})
-    const {total, messages} = aggregate
-    const {[field]: message} = item
-    return {
-      total: total + 1,
-      messages: [...messages, message],
-    }
-  }, {messages: [], total: 0})
-
 module.exports = {
   parseAxiosError,
-  aggregateReport,
   parseIncomingMessage,
 }
