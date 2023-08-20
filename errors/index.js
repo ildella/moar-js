@@ -11,7 +11,6 @@ const parseAxiosError = error => {
     'timeout',
     // 'headers',
   ]).value()
-  // console.log({...basic, status, code})
   if (code === 'ETIMEDOUT') return {
     status: 408,
     code,
@@ -39,6 +38,7 @@ const parseAxiosError = error => {
       message
       || dataError.message
       || 'No message provided in the response. Hope for the server logs'
+  // console.log({...basic, status, code, finalMessage})
   const {method, url, baseURL} = basic
   const humanReadableMessage =
       `${status} ${method} ${baseURL}${url} :: ${finalMessage}`
