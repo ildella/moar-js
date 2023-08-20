@@ -1,4 +1,5 @@
 const number = text => {
+  if (typeof text === 'number') return text
   if (typeof text !== 'string') throw new Error('input must be a string')
   if (text.length === 0) throw new Error('empty string not valid')
   const n = Number(text)
@@ -8,7 +9,7 @@ const number = text => {
 
 const positive = text => {
   const n = number(text)
-  if (n < 0) throw new Error('negative')
+  if (n < 0) throw new Error(`${text} is negative`)
   return n
 }
 
