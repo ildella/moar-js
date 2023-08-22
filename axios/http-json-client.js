@@ -4,15 +4,16 @@ const axios = require('axios')
 
 module.exports = ({
   baseURL,
-  hostname = '0.0.0.0',
-  port = 80,
   timeout = 2500,
-  headers = {},
   secure = true,
+  address = '0.0.0.0',
+  hostname = address || '0.0.0.0',
+  port = secure === true ? 443 : 80,
   rejectUnauthorized = secure !== false,
   protocol = secure === true ? 'https' : 'http',
   httpsAgent = new https.Agent({keepAlive: true, rejectUnauthorized}),
   httpAgent = new http.Agent({keepAlive: true}),
+  headers = {},
 } = {}) => axios.create({
   baseURL: baseURL || `${protocol}://${hostname}:${port}`,
   timeout,
