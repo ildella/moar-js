@@ -38,7 +38,7 @@
     "@fastify/cors": "8.3.0",
     "@fastify/sensible": "5.2.0",
     "axios": "1.4.0",
-    "depcheck": "1.4.3",
+    "depcheck": "1.4.5",
     "exstream.js": "0.23.0",
     "fastify": "4.21.0",
     "moar-js-dev": "1.4.0",
