@@ -21,7 +21,6 @@
     "node": ">=16.10"
   },
   "scripts": {
-    "audit.production": "yarn audit --groups dependencies",
     "depcheck": "depcheck",
     "lint": "eslint . --max-warnings 3",
     "core.test": "node --test",
@@ -29,7 +28,6 @@
     "coverage": "jest --coverage",
     "test": "jest",
     "test.watch": "yarn test --watch",
-    "mock": "nodemon src --mock",
     "dev": "nodemon src",
     "start": "node src",
     "release": "dev-github-npm-release-and-publish.sh"
