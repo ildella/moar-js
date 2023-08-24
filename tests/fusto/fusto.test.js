@@ -5,3 +5,7 @@ test('fusto basics', () => {
   expect(websocketStreamSource).toBeDefined()
   expect(curry).toBeDefined()
 })
+
+test('fusto', () => {
+  expect(__([1]).values()).toEqual([1])
+})
