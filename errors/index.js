@@ -19,7 +19,7 @@ const parseAxiosError = error => {
   }
   if (code === 'EAI_AGAIN') return {
     code,
-    message: error.message,
+    message: `${error.message} at ${basic.baseURL}`,
     ...basic,
   }
   if (!error.response) return {
