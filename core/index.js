@@ -1,3 +1,4 @@
+const {randomBytes} = require('crypto')
 const curry = require('just-curry-it')
 
 const buffer = require('./buffer-utils')
@@ -8,8 +9,7 @@ const toMap = json => new Map(Object.entries(json))
 
 const randomHexString = (length = 40) => {
   const bytes = Math.ceil(length / 2)
-  const randomBytes = crypto.randomBytes(bytes)
-  return randomBytes.toString('hex').slice(0, length)
+  return randomBytes(bytes).toString('hex').slice(0, length)
 }
 
 module.exports = {
