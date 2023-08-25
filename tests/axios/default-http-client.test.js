@@ -1,5 +1,5 @@
 /*
-  This is just the HttpJsonClient with the safe applied to parse the axios response in a nice way. 
+  This is just the HttpJsonClient with the safe applied to parse the axios response in a nice way.
 */
 
 const {defaultHttpJsonClient} = require('../../axios')
