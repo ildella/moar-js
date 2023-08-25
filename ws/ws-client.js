@@ -23,7 +23,7 @@ const client = ({
       wsConnectionString,
       {
         rejectUnauthorized,
-        ...headers,
+        headers,
       },
     )
     socket.on('open', () => {
