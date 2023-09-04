@@ -41,21 +41,21 @@
   "devDependencies": {
     "@fastify/cors": "8.3.0",
     "@fastify/sensible": "5.2.0",
-    "axios": "1.4.0",
+    "axios": "1.5.0",
     "exstream.js": "0.23.0",
-    "fastify": "4.21.0",
-    "moar-js-dev": "1.4.0",
+    "fastify": "4.22.2",
+    "moar-js-dev": "1.4.2",
     "tracer": "1.1.6",
     "ws": "8.13.0"
   },
   "peerDependencies": {
-    "@fastify/cors": "8.3.0",
-    "@fastify/sensible": "5.2.0",
-    "axios": "1.4.0",
+    "@fastify/cors": "^8",
+    "@fastify/sensible": "^5",
+    "axios": "^1",
     "exstream.js": "0.23.0",
-    "fastify": "4.21.0",
-    "tracer": "1.1.6",
-    "ws": "8.13.0"
+    "fastify": "^4",
+    "tracer": "^1",
+    "ws": "^8"
   },
   "dependencies": {
     "just-curry-it": "5.3.0",
