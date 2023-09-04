@@ -1,3 +1,5 @@
+// const {IncomingMessage} = require('http')
+
 const {__} = require('../fusto')
 
 // eslint-disable-next-line complexity, max-lines-per-function
@@ -26,9 +28,8 @@ const parseAxiosError = error => {
     status, code, message: 'HTTP error with no `response` property.', ...basic,
   }
   const {response} = error
-  // console.log(response.status)
-  // console.log(response.statusText)
   const {data} = response
+  // if (data instanceof IncomingMessage) return parseIncomingMessage(data)
   const {
     // statusCode,
     error: dataError = {},
@@ -54,7 +55,6 @@ const parseIncomingMessage = error => {
     return error
   }
   const {message, stack, exstreamInput} = error
-  // console.log('exstream error...', message, stack)
   const input = exstreamInput
   if (input._readableState) {
     const parsed = __([input])
