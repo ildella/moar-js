@@ -12,9 +12,17 @@ const randomHexString = (length = 40) => {
   return randomBytes(bytes).toString('hex').slice(0, length)
 }
 
+const cleanString = value => value
+  // eslint-disable-next-line no-useless-escape
+  .replaceAll(/[ !"#$%&'()+,./:;<=>@[\\\]^{}~\-]/g, ' ')
+  .replaceAll('   ', ' ')
+  .replaceAll('  ', ' ')
+  .trim()
+
 module.exports = {
   buffer,
   curry,
+  cleanString,
   fs,
   numbers,
   toMap,
