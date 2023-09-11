@@ -13,5 +13,5 @@ module.exports = {
   verbosity,
   tracerFastifyLogger,
   testEmbeddedServer,
-  testServer
+  testServer,
 }

@@ -1,4 +1,5 @@
 const {EOL} = require('os')
+const {readFileSync} = require('fs')
 const {readFile, writeFile, mkdir} = require('fs/promises')
 const curry = require('just-curry-it')
 
@@ -24,6 +25,11 @@ const readJson = async (path, options) => {
   return JSON.parse(buffer.toString())
 }
 
+const readJsonSync = (path, options) => {
+  const buffer = readFileSync(path, options)
+  return JSON.parse(buffer.toString())
+}
+
 const writeJson = async (path, json) => {
   await writeFile(
     path,
@@ -46,6 +52,7 @@ const mkFolder = folderName => mkdir(
 
 module.exports = {
   readJson,
+  readJsonSync,
   writeJson: curry(writeJson),
   mkFolder,
   readText,
