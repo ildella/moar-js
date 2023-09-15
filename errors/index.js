@@ -24,8 +24,13 @@ const parseAxiosError = error => {
     message: `${error.message} at ${basic.baseURL}`,
     ...basic,
   }
+  if (code === 'DEPTH_ZERO_SELF_SIGNED_CERT') return {
+    code,
+    message: `${error.message} at ${basic.baseURL}`,
+    ...basic,
+  }
   if (!error.response) return {
-    status, code, message: 'HTTP error with no `response` property.', ...basic,
+    status, code, message: 'HTTP error with no `response`.', ...basic,
   }
   const {response} = error
   const {data} = response

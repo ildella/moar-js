@@ -2,7 +2,7 @@ const {parseAxiosError} = require('../errors')
 
 // eslint-disable-next-line complexity
 const errorHandler = ({justPrintErrorMessage = false} = {}) => (error, {log}, reply) => {
-  log.trace('#### HTTP Server - Error Handler')
+  log.debug('#### HTTP Server - Error Handler')
   if (error.code === 'ECONNREFUSED') {
     log.fatal(error.message)
     return reply
@@ -18,8 +18,8 @@ const errorHandler = ({justPrintErrorMessage = false} = {}) => (error, {log}, re
   const parsed = parseAxiosError(error)
   const code = parsed.status || parsed.statusCode || 500
   const toPrint = justPrintErrorMessage === true ? parsed.message : parsed
-  if (code < 500) log.trace(toPrint)
-  if (code === 500) log.error(toPrint)
+  if (code < 500) log.debug(toPrint)
+  if (code >= 500) log.error(toPrint)
   return reply.code(code).send(toPrint)
 }
 
