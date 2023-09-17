@@ -33,6 +33,7 @@
     "core.test.watch": "node --test --watch tests/**/*.test.js tests/*.test.js",
     "coverage": "jest --coverage",
     "test": "jest",
+    "test.ci": "yarn test --ci --config jest.ci.config.js",
     "test.watch": "yarn test --watch",
     "dev": "nodemon src",
     "start": "node src",
