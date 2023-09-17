@@ -3,7 +3,7 @@
 // const {__} = require('../fusto')
 const pick = require('just-pick')
 
-// eslint-disable-next-line complexity, max-lines-per-function, sonarjs/cognitive-complexity
+// eslint-disable-next-line complexity, max-lines-per-function
 const parseAxiosError = error => {
   if (error.isAxiosError !== true) return error
   const {status, code, config} = error.toJSON()
@@ -34,15 +34,13 @@ const parseAxiosError = error => {
     status, code, message: 'HTTP error with no `response`.', ...basic,
   }
   const {response} = error
-  if (!response.data) return {
-    status, code, message: 'HTTP error response with no `data`.', ...basic,
-  }
   const {data} = response
   const {error: dataError = {}, message} = data
   const finalMessage =
       message
+      || error.message
       || dataError.message
-      || 'No message provided in the response. Hope for the server logs.'
+      || 'No message found in the Response. Hope for the server logs.'
   // console.log({...basic, status, code, finalMessage})
   const {method, url, baseURL} = basic
   const description = `${status} ${method} ${baseURL}${url} :: ${finalMessage}`

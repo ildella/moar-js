@@ -1,6 +1,6 @@
 {
   "name": "moar-js",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Simple JavaScript files I use across projects",
   "author": {
     "name": "Daniele Dellafiore"
@@ -40,7 +40,6 @@
     "release": "dev-github-npm-release-and-publish.sh"
   },
   "devDependencies": {
-    "@fastify/cors": "8.3.0",
     "@fastify/sensible": "5.2.0",
     "axios": "1.5.0",
     "exstream.js": "0.23.0",
@@ -50,7 +49,6 @@
     "ws": "8.13.0"
   },
   "peerDependencies": {
-    "@fastify/cors": "^8",
     "@fastify/sensible": "^5",
     "axios": "^1",
     "exstream.js": "0.23.0",

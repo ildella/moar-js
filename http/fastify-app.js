@@ -1,5 +1,4 @@
 const fastify = require('fastify')
-const cors = require('@fastify/cors')
 const sensible = require('@fastify/sensible')
 
 module.exports = () => {
@@ -12,11 +11,6 @@ module.exports = () => {
     ignoreTrailingSlash: true,
     disableRequestLogging: true,
     logger: false,
-  })
-  instance.register(cors, {
-    origin: true,
-    credentials: false,
-    // methods: ['GET', 'PUT', 'POST', 'DELETE'],
   })
   instance.register(sensible)
   return instance

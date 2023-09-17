@@ -1,7 +1,5 @@
-// const {parseAxiosError} = require('../errors')
-
 // eslint-disable-next-line complexity
-const errorHandler = ({justPrintErrorMessage = false} = {}) => (error, {log}, reply) => {
+const errorHandler = ({verbose = false} = {}) => (error, {log}, reply) => {
   log.trace('#### HTTP Server - Error Handler')
   if (error.code === 'ECONNREFUSED') {
     log.fatal(error.message)
@@ -15,11 +13,9 @@ const errorHandler = ({justPrintErrorMessage = false} = {}) => (error, {log}, re
       .status(error.status)
       .send({message: 'Connection to a remote service timed out.'})
   }
-  // const parsed = parseAxiosError(error)
-  const parsed = error
-  const code = parsed.status || parsed.statusCode || 500
-  const toPrint = justPrintErrorMessage === true ? parsed.message : parsed
-  if (code < 500) log.debug(toPrint)
+  const code = error.status || error.statusCode || 500
+  const toPrint = verbose === true ? error : {message: error.message}
+  if (code < 500) log.warn(toPrint)
   if (code >= 500) log.error(toPrint)
   return reply.code(code).send(toPrint)
 }
