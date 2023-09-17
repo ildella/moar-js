@@ -1,4 +1,3 @@
-const {safeHttpClient} = require('../axios')
 const testServer = require('./test-server')
 
 module.exports = ({appBuilder, appConfiguration, framework = 'fastify'}) => {
@@ -7,7 +6,7 @@ module.exports = ({appBuilder, appConfiguration, framework = 'fastify'}) => {
   const {start, stop, client} = fastifyTestServer(app)
   return {
     app,
-    client: safeHttpClient(client),
+    client,
     start,
     stop,
   }

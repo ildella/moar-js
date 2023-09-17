@@ -12,7 +12,7 @@ module.exports = app => {
   // eslint-disable-next-line require-await
   app.get('/abooom', async () => {
     // eslint-disable-next-line fp/no-throw
-    throw new Error('big booom')
+    throw new Error('async big booom')
   })
   app.get('/booom', () => {
     // console.log(request.headers)

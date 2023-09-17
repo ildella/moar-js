@@ -7,7 +7,7 @@ test('basic http test', async () => {
 
 test('http 200', async () => {
   const {status, data} = await t.client().get('/health')
-  expect(status).toEqual(200)
+  expect(status).toBe(200)
   expect(data).toHaveProperty('status', 'ok')
   expect(data).toHaveProperty('ip', '127.0.0.1')
 })
@@ -17,19 +17,19 @@ test('missing - 404 - ok', done => {
     .get('/missing')
     .then(() => done('nope'))
     .catch(error => {
-      expect(error).toHaveProperty('message')
-      expect(error.message).toContain('404')
       expect(error.status).toBe(404)
+      expect(error.message).toContain('not found')
       done()
     })
 })
 
-test('post missing - 400 - weird', done => {
+test('post missing - 400', done => {
   t.client()
     .post('/missing')
     .then(() => done('nope'))
     .catch(error => {
-      expect(error.message).toContain('400')
+      expect(error.status).toBe(400)
+      expect(error.message).toContain('application/json')
       done()
     })
 })
@@ -40,7 +40,8 @@ test('sync handler - 500', done => {
     .get('/booom')
     .then(() => done('nope'))
     .catch(error => {
-      expect(error.message).toContain('500')
+      expect(error.status).toBe(500)
+      expect(error.message).toBe('big booom')
       done()
     })
 })
@@ -55,7 +56,8 @@ test('use another content type', done => {
     .get('/booom')
     .then(() => done('nope'))
     .catch(error => {
-      expect(error.message).toContain('500')
+      expect(error.status).toBe(500)
+      expect(error.message).toBe('big booom')
       // TODO: review this statement...
       // is 415 Unsupported Media Type: application/x-www-form-urlencoded
       // if do not set client to {'Content-Type': 'application/json'}
@@ -68,7 +70,8 @@ test('async handler - 500', done => {
     .get('/abooom')
     .then(() => done('nope'))
     .catch(error => {
-      expect(error.message).toContain('500')
+      expect(error.status).toBe(500)
+      expect(error.message).toBe('async big booom')
       done()
     })
 })
