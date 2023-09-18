@@ -9,10 +9,4 @@ module.exports = ({app}) => {
   process.on('SIGTERM', event => {
     app.log.warn('SIGTERM', event)
   })
-  process.on('SIGQUIT', event => {
-    app.log.warn('SIGQUIT', event)
-  })
-  process.on('SIGKILL', event => {
-    app.log.warn('SIGKILL', event)
-  })
 }
