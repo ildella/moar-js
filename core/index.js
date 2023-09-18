@@ -1,5 +1,6 @@
 const {randomBytes} = require('crypto')
 const curry = require('just-curry-it')
+const pick = require('just-pick')
 
 const buffer = require('./buffer-utils')
 const fs = require('./fs-utils')
@@ -25,6 +26,7 @@ module.exports = {
   cleanString,
   fs,
   numbers,
+  pick,
   toMap,
   randomHexString,
 }
