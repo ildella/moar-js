@@ -4,7 +4,7 @@ const errorHandler = ({verbose = true} = {}) => (error, {
   id, ip, hostname, originalUrl, url, params,
 },
 reply) => {
-  log.debug(error)
+  // log.debug(error)
   log.debug({
     id, ip, hostname, originalUrl, url, params,
   })
