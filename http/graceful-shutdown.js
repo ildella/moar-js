@@ -6,4 +6,13 @@ module.exports = ({app}) => {
     // eslint-disable-next-line no-process-exit
     return process.exit(0)
   })
+  process.on('SIGTERM', event => {
+    app.log.warn('SIGTERM', event)
+  })
+  process.on('SIGQUIT', event => {
+    app.log.warn('SIGQUIT', event)
+  })
+  process.on('SIGKILL', event => {
+    app.log.warn('SIGKILL', event)
+  })
 }
