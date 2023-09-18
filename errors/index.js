@@ -1,9 +1,8 @@
-// const {IncomingMessage} = require('http')
-
-// const {__} = require('../fusto')
 const pick = require('just-pick')
 
-// eslint-disable-next-line complexity, max-lines-per-function
+/*
+  eslint-disable complexity, max-lines-per-function, max-statements, sonarjs/cognitive-complexity
+*/
 const parseAxiosError = error => {
   if (error.isAxiosError !== true) return error
   const {status, code, config} = error.toJSON()
@@ -14,10 +13,23 @@ const parseAxiosError = error => {
     'timeout',
     // 'headers',
   ])
+  // console.info({status, code}, basic, error.message)
   if (code === 'ETIMEDOUT') return {
     status: 408,
     code,
     message: 'Timed out.',
+    ...basic,
+  }
+  if (code === 'ECONNREFUSED') return {
+    status: 503,
+    code,
+    message: error.message,
+    ...basic,
+  }
+  if (code === 'ENOTFOUND') return {
+    status: 502,
+    code,
+    message: error.message,
     ...basic,
   }
   if (code === 'EAI_AGAIN') return {
@@ -41,7 +53,7 @@ const parseAxiosError = error => {
       || error.message
       || dataError.message
       || 'No message found in the Response. Hope for the server logs.'
-  // console.log({...basic, status, code, finalMessage})
+  // console.log({{status, code}, basic, finalMessage})
   const {method, url, baseURL} = basic
   const description = `${status} ${method} ${baseURL}${url} :: ${finalMessage}`
   return {
@@ -52,21 +64,4 @@ const parseAxiosError = error => {
   }
 }
 
-// const parseIncomingMessage = error => {
-//   if (!error.exstreamError) {
-//     return error
-//   }
-//   const {message, stack, exstreamInput} = error
-//   const input = exstreamInput
-//   if (input._readableState) {
-//     const parsed = __([input])
-//       .pick(['aborted', 'complete', 'statusCode', 'statusMessage', 'headers'])
-//       .value()
-//     return {message, stack, input: parsed}
-//   }
-// }
-
-module.exports = {
-  parseAxiosError,
-  // parseIncomingMessage,
-}
+module.exports = {parseAxiosError}

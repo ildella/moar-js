@@ -1,22 +1,17 @@
 // eslint-disable-next-line complexity
-const errorHandler = ({verbose = false} = {}) => (error, {log}, reply) => {
-  log.trace('#### HTTP Server - Error Handler')
-  if (error.code === 'ECONNREFUSED') {
-    log.fatal(error.message)
-    return reply
-      .status(503)
-      .send({message: 'Connection to a remote service failed. Hope for the server logs.'})
-  }
-  if (error.code === 'ETIMEDOUT') {
-    log.fatal(error.message)
-    return reply
-      .status(error.status)
-      .send({message: 'Connection to a remote service timed out.'})
-  }
+const errorHandler = ({verbose = true} = {}) => (error, {
+  log,
+  id, ip, hostname, originalUrl, url, params,
+},
+reply) => {
+  log.debug(error)
+  log.debug({
+    id, ip, hostname, originalUrl, url, params,
+  })
   const code = error.status || error.statusCode || 500
   const toPrint = verbose === true ? error : {message: error.message}
-  if (code < 500) log.warn(toPrint)
-  if (code >= 500) log.error(toPrint)
+  if (code < 500) log.warn({id, ip}, toPrint)
+  if (code >= 500) log.error({id, ip}, toPrint)
   return reply.code(code).send(toPrint)
 }
 

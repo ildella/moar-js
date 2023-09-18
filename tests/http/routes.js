@@ -1,3 +1,5 @@
+const {defaultHttpJsonClient} = require('../../axios')
+
 module.exports = app => {
   app.get('/health', request => {
     const ip = request.socket.remoteAddress
@@ -14,9 +16,20 @@ module.exports = app => {
     // eslint-disable-next-line fp/no-throw
     throw new Error('async big booom')
   })
+
   app.get('/booom', () => {
     // console.log(request.headers)
     // eslint-disable-next-line fp/no-throw
     throw new Error('big booom')
+  })
+
+  app.get('/remote', async () => {
+    const {get} = defaultHttpJsonClient('http://fakeurlnonexistent.com')
+    await get('/')
+  })
+
+  app.get('/remote-timeout', async () => {
+    const {get} = defaultHttpJsonClient('http://duckduckgo.com', {timeout: 1})
+    await get('/')
   })
   return app}
