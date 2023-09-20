@@ -27,6 +27,8 @@
     "node": ">=16.10"
   },
   "scripts": {
+    "audit": "yarn npm audit",
+    "audit.production": "yarn npm audit --environment dependencies",
     "depcheck": "depcheck",
     "lint": "eslint . --max-warnings 3",
     "core.test": "node --test",
