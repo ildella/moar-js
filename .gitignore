@@ -9,3 +9,5 @@ cpd.report
 
 .build
 .idea
+
+.yarn/*
