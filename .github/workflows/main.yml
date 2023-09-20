@@ -23,11 +23,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: |
-        corepack enable
-        yarn set version canary
-        yarn --version 
     # - run: yarn install --frozen-lockfile
+    - run: corepack enable
+    - run: corepack prepare yarn@canary --activate 
+    - run: yarn --version
     - run: yarn install --immutable
     - run: yarn audit
     - run: yarn check
