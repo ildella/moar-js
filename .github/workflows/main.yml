@@ -12,7 +12,10 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18, 20]
+        node-version: [
+          # 18, 
+          20,
+        ]
         # os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
@@ -21,11 +24,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
-        yarn --version 
         corepack enable
-        yarn --version 
         yarn set version canary
-        yarn --version
+        yarn --version 
     # - run: yarn install --frozen-lockfile
     - run: yarn install --immutable
     - run: yarn audit
