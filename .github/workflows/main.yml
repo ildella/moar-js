@@ -22,6 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         registry-url: 'https://registry.npmjs.org'
     # - run: yarn install --frozen-lockfile
+    - run: corepack enable
     - run: yarn install --immutable
     - run: yarn audit
     - run: yarn check
