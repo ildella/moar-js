@@ -20,9 +20,13 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        registry-url: 'https://registry.npmjs.org'
+    - run: |
+        yarn --version 
+        corepack enable
+        yarn --version 
+        yarn set version canary
+        yarn --version
     # - run: yarn install --frozen-lockfile
-    - run: corepack enable
     - run: yarn install --immutable
     - run: yarn audit
     - run: yarn check
