@@ -1,5 +1,7 @@
 const {defaultHttpJsonClient} = require('../../axios')
+const {__} = require('../../fusto/')
 
+// eslint-disable-next-line max-lines-per-function
 module.exports = app => {
   app.get('/health', request => {
     const ip = request.socket.remoteAddress
@@ -32,4 +34,33 @@ module.exports = app => {
     const {get} = defaultHttpJsonClient('http://duckduckgo.com', {timeout: 1})
     await get('/')
   })
-  return app}
+
+  app.get('/async-pipe-booom', async (request, reply) => {
+    await __([1])
+      // eslint-disable-next-line require-await
+      .map(async () => {
+        // eslint-disable-next-line fp/no-throw
+        throw new Error('big booom in the async pipeline')
+      })
+      .resolve()
+      .errors((error, push) => push(error))
+      .toPromise()
+    reply.code(200).send({})
+  })
+
+  app.get('/hijack-async-pipe-booom', async (request, reply) => {
+    reply.hijack()
+    await __([1])
+      // eslint-disable-next-line require-await
+      .map(async () => {
+        // eslint-disable-next-line fp/no-throw
+        throw new Error('big booom in the async pipeline')
+      })
+      .resolve()
+      .errors((error, push) => push(error))
+      .toPromise(() => reply.code(200).send({}))
+    return 'This will be ignored.'
+  })
+
+  return app
+}
