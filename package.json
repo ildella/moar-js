@@ -30,7 +30,7 @@
     "audit": "yarn npm audit",
     "audit.production": "yarn npm audit --environment dependencies",
     "depcheck": "depcheck",
-    "lint": "eslint . --max-warnings 3",
+    "lint": "eslint . --max-warnings 2",
     "core.test": "node --test",
     "core.test.watch": "node --test --watch tests/**/*.test.js tests/*.test.js",
     "coverage": "jest --coverage",
