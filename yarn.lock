@@ -2413,7 +2413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.50.0":
+"eslint@npm:8.50.0, eslint@npm:^8.50.0":
   version: 8.50.0
   resolution: "eslint@npm:8.50.0"
   dependencies:
@@ -4402,6 +4402,7 @@ __metadata:
   dependencies:
     "@fastify/sensible": "npm:5.3.0"
     axios: "npm:1.5.0"
+    eslint: "npm:^8.50.0"
     exstream.js: "npm:0.23.0"
     fastify: "npm:4.23.2"
     jest: "npm:^29.7.0"
