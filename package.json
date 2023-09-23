@@ -47,7 +47,7 @@
     "exstream.js": "0.23.0",
     "fastify": "4.23.2",
     "jest": "^29.7.0",
-    "moar-js-dev": "2.1.0",
+    "moar-js-dev": "2",
     "tracer": "1.2.0",
     "ws": "8.14.2"
   },
