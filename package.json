@@ -38,7 +38,7 @@
     "test.ci": "yarn test --ci --config jest.ci.config.js",
     "test.watch": "yarn test --watch",
     "dev": "nodemon src",
-    "start": "node src",
+    "start": "node src"
   },
   "devDependencies": {
     "@fastify/sensible": "5.3.0",
