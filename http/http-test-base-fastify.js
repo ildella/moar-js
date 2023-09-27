@@ -6,11 +6,11 @@ module.exports = app => ({
     host: '0.0.0.0',
   }),
   stop: () => app.close(),
-  client: params => {
+  client: parameters => {
     const {address, port} = app.server.address()
     return safeHttpClient(httpJsonClient, {
       baseURL: `http://${address}:${port}`,
-      ...params,
+      ...parameters,
     })
   },
   address: () => app.server.address(),

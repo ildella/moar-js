@@ -1488,14 +1488,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.5.0":
-  version: 1.5.0
-  resolution: "axios@npm:1.5.0"
+"axios@npm:1.5.1":
+  version: 1.5.1
+  resolution: "axios@npm:1.5.1"
   dependencies:
     follow-redirects: "npm:^1.15.0"
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
-  checksum: 128433020b1fe9a460121735016f377adc6109a1f62b61795b1a80704de0a70affb0d580c8abd057e28af5f343cb4fb9a17a0b2512ea7f314578bbe492851a23
+  checksum: 67633db5867c789a6edb6e5229884501bef89584a6718220c243fd5a64de4ea7dcdfdf4f8368a672d582db78aaa9f8d7b619d39403b669f451e1242bbd4c7ee2
   languageName: node
   linkType: hard
 
@@ -4374,9 +4374,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"moar-js-dev@npm:2":
-  version: 2.2.0
-  resolution: "moar-js-dev@npm:2.2.0"
+"moar-js-dev@npm:2.3.1":
+  version: 2.3.1
+  resolution: "moar-js-dev@npm:2.3.1"
   dependencies:
     depcheck: "npm:1.4.6"
     eslint: "npm:8.50.0"
@@ -4392,7 +4392,7 @@ __metadata:
     eslint-plugin-unicorn: "npm:48.0.1"
     jest: "npm:29.7.0"
     node-notifier: "npm:10.0.1"
-  checksum: d36235ca857a94b04466f9820dc5db19251739ff274d507192a9f69f5add6ea7a8c050e0ce0b51e42feb122a197b354eab687c5a98c32c66f499476cf38045f2
+  checksum: 968e8a75b5dc11fad7ebb03035887b7b9c83e10cbe2128763d9df836c33a54ce82e25950b4c0c13b46871c8a786ead252bb5c658f5fb8b065a6d52797c5c5a46
   languageName: node
   linkType: hard
 
@@ -4401,14 +4401,14 @@ __metadata:
   resolution: "moar-js@workspace:."
   dependencies:
     "@fastify/sensible": "npm:5.3.0"
-    axios: "npm:1.5.0"
+    axios: "npm:1.5.1"
     eslint: "npm:8.50.0"
     exstream.js: "npm:0.23.0"
     fastify: "npm:4.23.2"
     jest: "npm:29.7.0"
     just-curry-it: "npm:5.3.0"
     just-pick: "npm:4.2.0"
-    moar-js-dev: "npm:2"
+    moar-js-dev: "npm:2.3.1"
     tracer: "npm:1.2.0"
     ws: "npm:8.14.2"
   peerDependencies:

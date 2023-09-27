@@ -24,5 +24,5 @@ const create = ({baseUrl, cert, macaroon}) => httpJsonClient({
 
 module.exports = {
   createWs,
-  createHttp: params => safeHttpClient(create, params),
+  createHttp: parameters => safeHttpClient(create, parameters),
 }

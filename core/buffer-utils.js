@@ -2,7 +2,7 @@ const isValidUTF8 = string => {
   try {
     Buffer.from(string, 'utf8')
     return true
-  } catch (error) {
+  } catch {
     return false
   }
 }
@@ -11,13 +11,13 @@ const isValidBase64 = string => {
   try {
     const decoded = Buffer.from(string, 'base64').toString('base64')
     return string === decoded
-  } catch (error) {
+  } catch {
     return false
   }
 }
 
 const isValidHex = string => {
-  const hexPattern = /^[0-9a-fA-F]+$/
+  const hexPattern = /^[\dA-Fa-f]+$/
   return hexPattern.test(string)
 }
 

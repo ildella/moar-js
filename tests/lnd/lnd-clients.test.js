@@ -4,7 +4,7 @@ test('just checking...', () => {
   expect(lndClients).toBeDefined()
 })
 
-test.skip('http lnd client', () => {
-  const {lndHttp} = lndClients()
-  expect(lndHttp).toBeDefined()
-})
+// t('http lnd client', () => {
+//   const {lndHttp} = lndClients()
+//   expect(lndHttp).toBeDefined()
+// })

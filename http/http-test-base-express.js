@@ -10,11 +10,11 @@ module.exports = app => {
     },
     stop: () => server.close(),
     // client: () => axios.create({baseURL: `http://localhost:${server.address().port}`}),
-    client: params => {
+    client: parameters => {
       const {address, port} = app.server.address()
       return safeHttpClient(httpJsonClient, {
         baseURL: `http://${address}:${port}`,
-        ...params,
+        ...parameters,
       })
     },
   }

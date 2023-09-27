@@ -7,13 +7,21 @@ module.exports = {
     'fp',
     'unicorn',
   ],
+  ignorePatterns: [
+    'coverage/',
+  ],
   overrides: [
     {
-      files: ['**/src/**'],
+      files: [
+        '**/**',
+      ],
       extends: [
         'node-moar-stricter',
       ],
       rules: {
+        'fp/no-throw': 'off',
+        'fp/no-this': 'off',
+        'fp/no-mutation': 'off',
         'unicorn/prefer-top-level-await': 'off',
         // 'unicorn/no-array-reduce': 'off',
         'security/detect-non-literal-fs-filename': 'off',
