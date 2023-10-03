@@ -882,6 +882,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@noble/ciphers@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "@noble/ciphers@npm:0.2.0"
+  checksum: 178d88b822016cde03ef45172290159aa54c7f5686b946b469cc256f0ead45ddc469bbdab7957a842ea5119dc17c7e405b4ba2e582c44a3e9aef30ae9eb0198d
+  languageName: node
+  linkType: hard
+
+"@noble/curves@npm:1.1.0, @noble/curves@npm:~1.1.0":
+  version: 1.1.0
+  resolution: "@noble/curves@npm:1.1.0"
+  dependencies:
+    "@noble/hashes": "npm:1.3.1"
+  checksum: 7028e3f19a4a2a601f9159e5423f51ae86ab231bed79a6e40649b063e1ed7f55f5da0475f1377bd2c5a8e5fc485af9ce0549ad89da6b983d6af48e5d0a2041ca
+  languageName: node
+  linkType: hard
+
+"@noble/hashes@npm:1.3.1":
+  version: 1.3.1
+  resolution: "@noble/hashes@npm:1.3.1"
+  checksum: 39474bab7e7813dbbfd8750476f48046d3004984e161fcd4333e40ca823f07b069010b35a20246e5b4ac20858e29913172a4d69720fd1e93620f7bedb70f9b72
+  languageName: node
+  linkType: hard
+
+"@noble/hashes@npm:~1.3.0, @noble/hashes@npm:~1.3.1":
+  version: 1.3.2
+  resolution: "@noble/hashes@npm:1.3.2"
+  checksum: 685f59d2d44d88e738114b71011d343a9f7dce9dfb0a121f1489132f9247baa60bc985e5ec6f3213d114fbd1e1168e7294644e46cbd0ce2eba37994f28eeb51b
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -922,6 +952,41 @@ __metadata:
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
   checksum: 115e8ceeec6bc69dff2048b35c0ab4f8bbee12d8bb6c1f4af758604586d802b6e669dcb02dda61d078de42c2b4ddce41b3d9e726d7daa6b4b850f4adbf7333ff
+  languageName: node
+  linkType: hard
+
+"@scure/base@npm:1.1.1":
+  version: 1.1.1
+  resolution: "@scure/base@npm:1.1.1"
+  checksum: 9aaa525ac25215cbe1bde00733a2fd25e99f03793aa1fd2961c567bb62b60c8a3a485a7cb5d748c41604fca79d149de19b05e64449b770c0a04b9ae38d0b5b2b
+  languageName: node
+  linkType: hard
+
+"@scure/base@npm:~1.1.0":
+  version: 1.1.3
+  resolution: "@scure/base@npm:1.1.3"
+  checksum: cb715fa8cdb043c4d96b6ba0666791d4eb4d033f7b5285a853aba25e0ba94914f05ff5d956029ad060005f9bdd02dab0caef9a0a63f07ed096a2c2a0c0cf9c36
+  languageName: node
+  linkType: hard
+
+"@scure/bip32@npm:1.3.1":
+  version: 1.3.1
+  resolution: "@scure/bip32@npm:1.3.1"
+  dependencies:
+    "@noble/curves": "npm:~1.1.0"
+    "@noble/hashes": "npm:~1.3.1"
+    "@scure/base": "npm:~1.1.0"
+  checksum: 0595955374dfa54a60adfa33d4793fd8b27230e962aaceb5bb5fcf8ccbb935184aa2c45154ec9bdfb26a1877b2ae0a8e4808c9a5464d4ffd971120740b816def
+  languageName: node
+  linkType: hard
+
+"@scure/bip39@npm:1.2.1":
+  version: 1.2.1
+  resolution: "@scure/bip39@npm:1.2.1"
+  dependencies:
+    "@noble/hashes": "npm:~1.3.0"
+    "@scure/base": "npm:~1.1.0"
+  checksum: 2ea368bbed34d6b1701c20683bf465e147f231a9e37e639b8c82f585d6f978bb0f3855fca7ceff04954ae248b3e313f5d322d0210614fb7acb402739415aaf31
   languageName: node
   linkType: hard
 
@@ -4409,15 +4474,9 @@ __metadata:
     just-curry-it: "npm:5.3.0"
     just-pick: "npm:4.2.0"
     moar-js-dev: "npm:2.3.1"
+    nostr-tools: "npm:1.16.0"
     tracer: "npm:1.2.0"
     ws: "npm:8.14.2"
-  peerDependencies:
-    "@fastify/sensible": ^5
-    axios: ^1
-    exstream.js: 0.23.0
-    fastify: ^4
-    tracer: ^1
-    ws: ^8
   languageName: unknown
   linkType: soft
 
@@ -4547,6 +4606,25 @@ __metadata:
   version: 3.0.0
   resolution: "normalize-path@npm:3.0.0"
   checksum: 88eeb4da891e10b1318c4b2476b6e2ecbeb5ff97d946815ffea7794c31a89017c70d7f34b3c2ebf23ef4e9fc9fb99f7dffe36da22011b5b5c6ffa34f4873ec20
+  languageName: node
+  linkType: hard
+
+"nostr-tools@npm:1.16.0":
+  version: 1.16.0
+  resolution: "nostr-tools@npm:1.16.0"
+  dependencies:
+    "@noble/ciphers": "npm:^0.2.0"
+    "@noble/curves": "npm:1.1.0"
+    "@noble/hashes": "npm:1.3.1"
+    "@scure/base": "npm:1.1.1"
+    "@scure/bip32": "npm:1.3.1"
+    "@scure/bip39": "npm:1.2.1"
+  peerDependencies:
+    typescript: ">=5.0.0"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: fce4c7df2fe1cc057291954ae25f9889dfe41cafbe771e23b69cab8b8986bf5735c30a06f9c51e894d3ab14f57e9644a3094167888054345910ae2b9db40b599
   languageName: node
   linkType: hard
 

@@ -22,6 +22,7 @@ module.exports = {
         'fp/no-throw': 'off',
         'fp/no-this': 'off',
         'fp/no-mutation': 'off',
+        'node/no-unpublished-require': 'off',
         'unicorn/prefer-top-level-await': 'off',
         // 'unicorn/no-array-reduce': 'off',
         'security/detect-non-literal-fs-filename': 'off',
