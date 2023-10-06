@@ -1,6 +1,6 @@
 const curry = require('just-curry-it')
 
-const {parseAxiosError} = require('../errors')
+const parseAxiosError = require('./parse-axios-error')
 
 const safeHttpClient = (client, parameters) => {
   // console.log({params})

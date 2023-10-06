@@ -3,7 +3,7 @@ const pick = require('just-pick')
 /*
   eslint-disable complexity, max-lines-per-function, max-statements, sonarjs/cognitive-complexity
 */
-const parseAxiosError = error => {
+module.exports = error => {
   if (error.isAxiosError !== true) return error
   const {status, code, config} = error.toJSON()
   const basic = pick(config, [
@@ -63,5 +63,3 @@ const parseAxiosError = error => {
     ...basic,
   }
 }
-
-module.exports = {parseAxiosError}
