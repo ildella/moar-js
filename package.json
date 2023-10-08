@@ -58,6 +58,7 @@
     "exstream.js": "0.23.0",
     "fastify": "4.23.2",
     "jest": "29.7.0",
+    "node-notifier": "10.0.1",
     "nostr-tools": "1.16.0",
     "tracer": "1.2.0",
     "ws": "8.14.2"
