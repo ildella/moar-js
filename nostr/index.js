@@ -17,16 +17,7 @@ const newEvent = (secretKey, {content}) => ({
   pubkey: getPublicKey(secretKey),
 })
 
-const newSignedEvent = (secretKey, {content}) => signEvent(newEvent(secretKey, {content}))
-
 module.exports = secretKey => ({
   signEvent: curry(signEvent)(secretKey),
   newEvent: curry(newEvent)(secretKey),
-  newSignedEvent: curry(newSignedEvent)(secretKey),
-})
-
-module.exports = secretKey => ({
-  signEvent: curry(signEvent)(secretKey),
-  newEvent: curry(newEvent)(secretKey),
-  newSignedEvent: curry(newSignedEvent)(secretKey),
 })
