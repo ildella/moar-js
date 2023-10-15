@@ -1,5 +1,7 @@
 const tracer = require('tracer')
 
+const {toMap} = require('../core')
+
 const standard = ({level = 'info'} = {}) => tracer.colorConsole({
   format: [
     '{{message}} (in {{file}}:{{line}})',
@@ -8,16 +10,18 @@ const standard = ({level = 'info'} = {}) => tracer.colorConsole({
 })
 
 const defaultDateFormat = 'yy/mm/dd, HH:MM:ss'
-
-const local = ({level = 'info'} = {}) => tracer.colorConsole({
-  // format: [
-  //   '{{timestamp}} {{message}} (in {{file}}:{{line}})',
-  // ],
-  format: [
+const formats = toMap({
+  file: [
     '{{timestamp}} | {{file}}:{{line}} | {{message}}',
   ],
+  folder: [
+    '{{timestamp}} | {{folder}}/{{file}}:{{line}} | {{message}}',
+  ],
+})
+
+const local = ({level = 'info', format = 'file'} = {}) => tracer.colorConsole({
   level,
-  // dateformat: 'HH:MM:ss',
+  format: formats.get(format),
   dateformat: defaultDateFormat,
   transport: [
     data => {

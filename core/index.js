@@ -6,6 +6,8 @@ const buffer = require('./buffer-utils')
 const fs = require('./fs-utils')
 const numbers = require('./numbers-utils')
 
+const unixTimestamp = () => Math.round(Date.now() / 1000)
+
 const toMap = json => new Map(Object.entries(json))
 
 const randomHexString = (length = 40) => {
@@ -29,4 +31,6 @@ module.exports = {
   pick,
   toMap,
   randomHexString,
+  unixTimestamp,
+  nowSeconds: unixTimestamp,
 }
