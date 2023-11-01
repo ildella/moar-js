@@ -50,8 +50,8 @@ module.exports = error => {
   const {error: dataError = {}, message} = data
   const finalMessage =
       message
-      || error.message
       || dataError.message
+      || error.message
       || 'No message found in the Response. Hope for the server logs.'
   // console.log({{status, code}, basic, finalMessage})
   const {method, url, baseURL} = basic
