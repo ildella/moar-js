@@ -1,10 +1,6 @@
-const curry = require('just-curry-it')
-
 const parseAxiosError = require('./parse-axios-error')
 
-const safeHttpClient = (client, parameters) => {
-  // console.log({params})
-  const instance = client(parameters)
+module.exports = instance => {
   instance.interceptors.response.use(
     response => response,
     error => {
@@ -14,5 +10,3 @@ const safeHttpClient = (client, parameters) => {
   )
   return instance
 }
-
-module.exports = curry(safeHttpClient)

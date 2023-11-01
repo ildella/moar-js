@@ -1,4 +1,4 @@
-const {httpJsonClient, safeHttpClient} = require('../axios')
+const {defaultHttpJsonClient} = require('../axios')
 
 module.exports = app => ({
   start: () => app.listen({
@@ -8,10 +8,7 @@ module.exports = app => ({
   stop: () => app.close(),
   client: parameters => {
     const {address, port} = app.server.address()
-    return safeHttpClient(httpJsonClient, {
-      baseURL: `http://${address}:${port}`,
-      ...parameters,
-    })
+    return defaultHttpJsonClient(`http://${address}:${port}`, {...parameters})
   },
   address: () => app.server.address(),
 })
