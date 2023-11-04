@@ -4,7 +4,8 @@ const pick = require('just-pick')
 
 const buffer = require('./buffer-utils')
 const fs = require('./fs-utils')
-const numbers = require('./numbers-utils')
+const numbers = require('./numbers')
+const math = require('./math')
 
 const unixTimestamp = () => Math.round(Date.now() / 1000)
 
@@ -27,10 +28,11 @@ module.exports = {
   curry,
   cleanString,
   fs,
-  numbers,
   pick,
   toMap,
   randomHexString,
   unixTimestamp,
   nowSeconds: unixTimestamp,
+  ...numbers,
+  ...math,
 }
