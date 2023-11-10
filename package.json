@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/ildella/moar-js/issues"
   },
-  "packageManager": "yarn@4.0.0",
+  "packageManager": "yarn@4.0.1",
   "keywords": [
     "JavaScript",
     "Library",
@@ -36,7 +36,7 @@
     "coverage": "jest --coverage",
     "test": "jest",
     "test.ci": "yarn test --ci --config jest.ci.config.js",
-    "test.watch": "yarn test --watch",
+    "test.watch": "yarn test --watch"
   },
   "devDependencies": {
     "axios": "1.6.1",
