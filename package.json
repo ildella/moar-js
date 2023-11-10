@@ -29,7 +29,6 @@
   },
   "scripts": {
     "audit": "yarn npm audit",
-    "audit.production": "yarn npm audit --environment dependencies",
     "depcheck": "depcheck",
     "lint": "eslint . --max-warnings 2",
     "core.test": "node --test",
@@ -38,8 +37,6 @@
     "test": "jest",
     "test.ci": "yarn test --ci --config jest.ci.config.js",
     "test.watch": "yarn test --watch",
-    "dev": "nodemon src",
-    "start": "node src"
   },
   "devDependencies": {
     "axios": "1.6.1",
