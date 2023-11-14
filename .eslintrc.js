@@ -19,25 +19,30 @@ module.exports = {
         'node-moar-stricter',
       ],
       rules: {
-        'fp/no-throw': 'off',
-        'fp/no-this': 'off',
+        'camelcase': 'off',
         'fp/no-mutation': 'off',
+        'fp/no-this': 'off',
+        'fp/no-throw': 'off',
         'node/no-unpublished-require': 'off',
+        'security/detect-non-literal-fs-filename': 'off',
         'unicorn/prefer-top-level-await': 'off',
         // 'unicorn/no-array-reduce': 'off',
-        'security/detect-non-literal-fs-filename': 'off',
       },
     },
     {
       files: [
         '**/tests/**',
+      ],
+      extends: [
+        'node-moar-test',
+      ],
+    },
+    {
+      files: [
         '**/fixtures/**',
         '.eslintrc.js',
         'jest.config.js',
         'jest.config.*.js',
-      ],
-      extends: [
-        'node-moar-test',
       ],
     },
   ],
