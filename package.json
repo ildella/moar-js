@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/ildella/moar-js/issues"
   },
-  "packageManager": "yarn@4.0.1",
+  "packageManager": "yarn@4.0.2",
   "keywords": [
     "JavaScript",
     "Library",
