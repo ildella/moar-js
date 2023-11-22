@@ -21,7 +21,6 @@ module.exports = app => {
   })
 
   app.get('/booom', () => {
-    // console.log(request.headers)
     // eslint-disable-next-line fp/no-throw
     throw new Error('big booom')
   })
@@ -37,8 +36,20 @@ module.exports = app => {
   })
 
   app.post('/long', async () => {
+    // console.log('Called...')
     await sleep(400)
     return {slow: true}
+  })
+
+  app.post('/stream', async (request, reply) => {
+    reply.raw.setHeader('transfer-encoding', 'chunked')
+    reply.code(201)
+    // reply.hijack()
+    // console.log('Stream started...')
+    await sleep(400)
+    reply.raw.write('new line...')
+    // console.log('Stream finished.')
+    reply.raw.end()
   })
 
   app.get('/async-pipe-booom', async (request, reply) => {
