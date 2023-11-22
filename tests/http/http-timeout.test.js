@@ -1,4 +1,3 @@
-const axios = require('axios')
 const {jsonClient} = global.t
 
 test('timeout is too short', async () => {
@@ -26,7 +25,7 @@ test('short timeout with response stream', async () => {
   })
 })
 
-test.only('wait', async () => {
+test('wait', async () => {
   const {post} = jsonClient({timeout: 500, responseType: 'stream'})
   const {status} = await post('/stream', {})
   expect(status).toEqual(201)
