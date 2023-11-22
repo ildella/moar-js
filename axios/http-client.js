@@ -13,7 +13,8 @@ module.exports = ({
   protocol = secure === true ? 'https' : 'http',
   httpsAgent = new https.Agent({keepAlive: true, rejectUnauthorized}),
   httpAgent = new http.Agent({keepAlive: true}),
-  headers,
+  // headers,
+  ...override
 } = {}) => axios.create({
   baseURL: baseURL || `${protocol}://${hostname}:${port}`,
   timeout,
@@ -25,5 +26,6 @@ module.exports = ({
     // forcedJSONParsing: false,
     silentJSONParsing: false,
   },
-  headers,
+  // headers,
+  ...override,
 })

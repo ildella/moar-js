@@ -30,3 +30,15 @@ test('wait', async () => {
   const {status} = await post('/stream', {})
   expect(status).toEqual(201)
 })
+
+test('short timeout with non clarify option', async () => {
+  const {post} = jsonClient({
+    timeout: 200,
+    responseType: 'stream',
+    transitional: {clarifyTimeoutError: false},
+  })
+  await expect(post('/stream', {})).rejects.toMatchObject({
+    code: 'ECONNABORTED',
+    message: 'HTTP error with no `response`.',
+  })
+})
