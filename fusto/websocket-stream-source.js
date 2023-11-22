@@ -17,6 +17,6 @@ module.exports = socket => (push, next) => {
   socket.on('close', () => {
     // console.info('socket close event')
     // eslint-disable-next-line unicorn/no-null
-    push(null, nil)
+    push(nil)
   })
 }
