@@ -1,3 +1,4 @@
+const {setTimeout: sleep} = require('timers/promises')
 const {defaultHttpJsonClient} = require('../../axios')
 const {__} = require('../../fusto/')
 
@@ -33,6 +34,11 @@ module.exports = app => {
   app.get('/remote-timeout', async () => {
     const {get} = defaultHttpJsonClient('http://duckduckgo.com', {timeout: 1})
     await get('/')
+  })
+
+  app.post('/long', async () => {
+    await sleep(400)
+    return {slow: true}
   })
 
   app.get('/async-pipe-booom', async (request, reply) => {

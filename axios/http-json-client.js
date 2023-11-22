@@ -1,33 +1,12 @@
-const http = require('http')
-const https = require('https')
-const axios = require('axios')
+const httpClient = require('./http-client')
 
-module.exports = ({
-  baseURL,
-  timeout = 2500,
-  secure = true,
-  address = '0.0.0.0',
-  hostname = address || '0.0.0.0',
-  port = secure === true ? 443 : 80,
-  rejectUnauthorized = secure !== false,
-  protocol = secure === true ? 'https' : 'http',
-  httpsAgent = new https.Agent({keepAlive: true, rejectUnauthorized}),
-  httpAgent = new http.Agent({keepAlive: true}),
-  headers = {},
-} = {}) => axios.create({
-  baseURL: baseURL || `${protocol}://${hostname}:${port}`,
-  timeout,
-  httpAgent,
-  httpsAgent,
-  transitional: {
-    clarifyTimeoutError: true,
-    // forcedJSONParsing: false,
-    silentJSONParsing: false,
-  },
+module.exports = ({headers = {}, ...options} = {}) => httpClient({
+  timeout: 2500,
   headers: {
     'Accept': 'application/json',
     'Accept-Encoding': 'gzip, deflate',
     'Content-Type': 'application/json; charset=utf-8',
     ...headers,
   },
+  ...options,
 })
