@@ -19,8 +19,11 @@ module.exports = ({
   timeout,
   httpAgent,
   httpsAgent,
-  insecureHTTPParser: false,
-  transitional: {clarifyTimeoutError: true},
+  transitional: {
+    clarifyTimeoutError: true,
+    forcedJSONParsing: false,
+    silentJSONParsing: false,
+  },
   headers: {
     'Accept': 'application/json',
     'Accept-Encoding': 'gzip, deflate',

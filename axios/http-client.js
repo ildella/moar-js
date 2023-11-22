@@ -4,7 +4,7 @@ const axios = require('axios')
 
 module.exports = ({
   baseURL,
-  timeout = 5000,
+  timeout = 15_000,
   secure = true,
   address = '0.0.0.0',
   hostname = address || '0.0.0.0',
@@ -19,7 +19,11 @@ module.exports = ({
   timeout,
   httpAgent,
   httpsAgent,
-  insecureHTTPParser: false,
-  transitional: {clarifyTimeoutError: true},
+  // insecureHTTPParser: false,
+  transitional: {
+    clarifyTimeoutError: true,
+    forcedJSONParsing: false,
+    silentJSONParsing: false,
+  },
   headers,
 })
