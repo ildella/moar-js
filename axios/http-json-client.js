@@ -21,7 +21,7 @@ module.exports = ({
   httpsAgent,
   transitional: {
     clarifyTimeoutError: true,
-    forcedJSONParsing: false,
+    // forcedJSONParsing: false,
     silentJSONParsing: false,
   },
   headers: {
