@@ -10,7 +10,7 @@ const {start, stop, client} = testFastifyServer(app)
 tracerFastifyLogger({app, logLevel: 'debug'})
 app.setErrorHandler(httpErrorHandler())
 
-global.t = {client}
+global.t = {client, jsonClient: client}
 
 beforeAll(start)
 afterAll(stop)

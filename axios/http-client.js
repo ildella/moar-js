@@ -22,7 +22,7 @@ module.exports = ({
   // insecureHTTPParser: false,
   transitional: {
     clarifyTimeoutError: true,
-    forcedJSONParsing: false,
+    // forcedJSONParsing: false,
     silentJSONParsing: false,
   },
   headers,
