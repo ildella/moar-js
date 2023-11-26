@@ -11,10 +11,11 @@ __.extend('toPromiseValue', async function (input) {
 })
 
 __.extend('sleep', function (delay) {
-  return this.map(async json => {
+  return this.map(async item => {
     await sleep(delay)
-    return json
+    return item
   })
+    .resolve()
 })
 
 module.exports = {
