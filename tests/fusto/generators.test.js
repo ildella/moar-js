@@ -1,24 +1,10 @@
-const {__, nil} = require('../../fusto')
+const {__, generators: {arrayMapping}} = require('../../fusto')
 
 const items = ['a', 'b']
-
-const generator = ({
-  // zeroBased = true,
-  prefix = '',
-} = {}) => (push, next) => {
-  // console.log({items})
-  items.map((item, index) => {
-    // console.log({prefix, item, index})
-    // const index = zeroBased ? i : i + 1
-    push({item: `${prefix}${item}`, index})
-    next()
-  })
-  // console.log('DONE.')
-  push(nil)
-}
+const generator = arrayMapping
 
 test('index generator', async () => {
-  const stream = __(generator())
+  const stream = __(generator({items}))
   const values = await stream.toPromise()
   expect(values).toEqual([
     {item: 'a', index: 0},
@@ -27,7 +13,7 @@ test('index generator', async () => {
 })
 
 test('prefix and zeroBased', async () => {
-  const stream = __(generator({prefix: 'doc:'}))
+  const stream = __(generator({items, prefix: 'doc:'}))
   const values = await stream.toPromise()
   expect(values).toEqual([
     {item: 'doc:a', index: 0},
@@ -38,7 +24,7 @@ test('prefix and zeroBased', async () => {
 test('index generator in the middle of the stream', async () => {
   const stream = __([1, 2, 3])
   const values = await stream
-    .through(__(generator()))
+    .through(__(generator({items})))
     .toPromise()
   expect(values).toEqual([
     {item: 'a', index: 0},
@@ -49,16 +35,15 @@ test('index generator in the middle of the stream', async () => {
 test('should generate 6 elements', async () => {
   const stream = __([1, 2, 3])
   const values = await stream
-    .map(index => __(generator({prefix: index})))
-    .merge()
+    .map(index => __(generator({items, prefix: index})))
+    .merge(1, true) // true is required only when we have parallelism
     .toPromise()
-  // console.log(values)
   expect(values).toEqual([
     {item: '1a', index: 0},
-    {item: '2a', index: 0},
-    {item: '3a', index: 0},
     {item: '1b', index: 1},
+    {item: '2a', index: 0},
     {item: '2b', index: 1},
+    {item: '3a', index: 0},
     {item: '3b', index: 1},
   ])
 })
