@@ -36,7 +36,7 @@ test('should generate 6 elements', async () => {
   const stream = __([1, 2, 3])
   const values = await stream
     .map(index => __(generator({items, prefix: index})))
-    .merge(1, true) // true is required only when we have parallelism
+    .merge(1, false) // true is required with parallelism, with potential scalability issues.
     .toPromise()
   expect(values).toEqual([
     {item: '1a', index: 0},
