@@ -1,6 +1,6 @@
 const fastify = require('fastify')
 
-module.exports = () => fastify({
+module.exports = options => fastify({
   // keepAliveTimeout: 5000,
   // connectionTimeout: 5000,
   // requestTimeout: 5000,
@@ -9,4 +9,5 @@ module.exports = () => fastify({
   ignoreTrailingSlash: true,
   disableRequestLogging: true,
   logger: false,
+  ...options,
 })
