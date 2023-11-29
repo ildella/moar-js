@@ -3,7 +3,7 @@ const __ = require('exstream.js')
 const arrayMapping = ({
   // zeroBased = true,
   prefix = '',
-  items,
+  items = [],
 }) => (push, next) => {
   items.map((item, index) => {
     // console.log({prefix, item, index})
