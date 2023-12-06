@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "axios": "1.6.2",
-    "eslint": "8.54.0",
+    "eslint": "8.55.0",
     "eslint-config-node-moar": "0.11.0",
     "eslint-config-node-moar-stricter": "0.1.0",
     "eslint-config-node-moar-test": "0.1.3",
