@@ -1,9 +1,9 @@
 const {generatePrivateKey, getPublicKey, verifySignature} = require('nostr-tools')
 
-const {signEvent} = require('../../nostr')
-
 const secretKey = generatePrivateKey()
 const publicKey = getPublicKey(secretKey)
+
+const {signEvent} = require('../../nostr')(secretKey)
 
 const event = {
   kind: 1,
