@@ -18,6 +18,11 @@ __.extend('sleep', function (delay) {
     .resolve()
 })
 
+__.extend('decorate', function (key, value) {
+  // eslint-disable-next-line fp/no-this
+  return this.map(item => ({[key]: value, ...item}))
+})
+
 module.exports = {
   __,
   xs: __,
