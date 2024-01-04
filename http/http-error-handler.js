@@ -5,7 +5,11 @@ const errorHandler = ({printStack = false, verboseDump = false} = {}) => (error,
 },
 reply) => {
   const code = error.status || error.statusCode || 500
-  const response = {message: error.message, code}
+  const response = {
+    description: error.description,
+    message: error.message,
+    code,
+  }
   const message = printStack === true ? error : response
   const basic = {
     method, hostname, url, body,
