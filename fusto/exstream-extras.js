@@ -23,6 +23,14 @@ __.extend('decorate', function (key, value) {
   return this.map(item => ({[key]: value, ...item}))
 })
 
+__.extend('mapDecorate', function (f, key) {
+  // eslint-disable-next-line fp/no-this
+  return this.map(async item => {
+    const value = await f(item)
+    return {[key]: value, ...item}
+  })
+})
+
 module.exports = {
   __,
   xs: __,
