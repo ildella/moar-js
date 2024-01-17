@@ -24,9 +24,16 @@ __.extend('decorate', function (key, value) {
 })
 
 __.extend('mapDecorate', function (f, key) {
+  const isPromise = f instanceof Promise
+  if (isPromise === true)
+    // eslint-disable-next-line fp/no-this
+    return this.map(async item => {
+      const value = await f(item)
+      return {[key]: value, ...item}
+    })
   // eslint-disable-next-line fp/no-this
-  return this.map(async item => {
-    const value = await f(item)
+  return this.map(item => {
+    const value = f(item)
     return {[key]: value, ...item}
   })
 })
