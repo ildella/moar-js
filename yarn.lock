@@ -886,14 +886,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/ciphers@npm:0.2.0":
-  version: 0.2.0
-  resolution: "@noble/ciphers@npm:0.2.0"
-  checksum: 10/178d88b822016cde03ef45172290159aa54c7f5686b946b469cc256f0ead45ddc469bbdab7957a842ea5119dc17c7e405b4ba2e582c44a3e9aef30ae9eb0198d
+"@noble/ciphers@npm:^0.5.1":
+  version: 0.5.3
+  resolution: "@noble/ciphers@npm:0.5.3"
+  checksum: 10/af0ad96b5807feace93e63549e05de6f5e305b36e2e95f02d90532893fbc3af3f19b9621b6de4caa98303659e5df2e7aa082064e5d4a82e6f38c728d48dfae5d
   languageName: node
   linkType: hard
 
-"@noble/curves@npm:1.1.0, @noble/curves@npm:~1.1.0":
+"@noble/curves@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@noble/curves@npm:1.2.0"
+  dependencies:
+    "@noble/hashes": "npm:1.3.2"
+  checksum: 10/94e02e9571a9fd42a3263362451849d2f54405cb3ce9fa7c45bc6b9b36dcd7d1d20e2e1e14cfded24937a13d82f1e60eefc4d7a14982ce0bc219a9fc0f51d1f9
+  languageName: node
+  linkType: hard
+
+"@noble/curves@npm:~1.1.0":
   version: 1.1.0
   resolution: "@noble/curves@npm:1.1.0"
   dependencies:
@@ -909,7 +918,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/hashes@npm:~1.3.0, @noble/hashes@npm:~1.3.1":
+"@noble/hashes@npm:1.3.2, @noble/hashes@npm:~1.3.0, @noble/hashes@npm:~1.3.1":
   version: 1.3.2
   resolution: "@noble/hashes@npm:1.3.2"
   checksum: 10/685f59d2d44d88e738114b71011d343a9f7dce9dfb0a121f1489132f9247baa60bc985e5ec6f3213d114fbd1e1168e7294644e46cbd0ce2eba37994f28eeb51b
@@ -1467,14 +1476,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.6.8":
-  version: 1.6.8
-  resolution: "axios@npm:1.6.8"
+"axios@npm:1.7.2":
+  version: 1.7.2
+  resolution: "axios@npm:1.7.2"
   dependencies:
     follow-redirects: "npm:^1.15.6"
     form-data: "npm:^4.0.0"
     proxy-from-env: "npm:^1.1.0"
-  checksum: 10/3f9a79eaf1d159544fca9576261ff867cbbff64ed30017848e4210e49f3b01e97cf416390150e6fdf6633f336cd43dc1151f890bbd09c3c01ad60bb0891eee63
+  checksum: 10/6ae80dda9736bb4762ce717f1a26ff997d94672d3a5799ad9941c24d4fb019c1dff45be8272f08d1975d7950bac281f3ba24aff5ecd49ef5a04d872ec428782f
   languageName: node
   linkType: hard
 
@@ -2605,9 +2614,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastify@npm:4.27.0":
-  version: 4.27.0
-  resolution: "fastify@npm:4.27.0"
+"fastify@npm:4.28.0":
+  version: 4.28.0
+  resolution: "fastify@npm:4.28.0"
   dependencies:
     "@fastify/ajv-compiler": "npm:^3.5.0"
     "@fastify/error": "npm:^3.4.0"
@@ -2625,7 +2634,7 @@ __metadata:
     secure-json-parse: "npm:^2.7.0"
     semver: "npm:^7.5.4"
     toad-cache: "npm:^3.3.0"
-  checksum: 10/5c98f4407627f3c08c222ee4ff7294a84ccb42d6612c80d3bea4b065cbd1ea010fa86f3c870cdae6c579c3982d97a6bf308dec8f3a9d15eb761138321e1e4207
+  checksum: 10/8f3991b1ae2b5248ca9fb09f57f0fc083ca3ca26ab418fb2b0b768c5cec5c01aa4aaa9e7697018457a5f53fe43d74747bac2393509eeac96bb535d5cbba4e062
   languageName: node
   linkType: hard
 
@@ -4211,7 +4220,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "moar-js@workspace:."
   dependencies:
-    axios: "npm:1.6.8"
+    axios: "npm:1.7.2"
     eslint: "npm:8.57.0"
     eslint-config-node-moar: "npm:0.12.2"
     eslint-config-node-moar-stricter: "npm:0.2.1"
@@ -4224,14 +4233,14 @@ __metadata:
     eslint-plugin-sonarjs: "npm:0.23.0"
     eslint-plugin-unicorn: "npm:50.0.1"
     exstream.js: "npm:0.25.0"
-    fastify: "npm:4.27.0"
+    fastify: "npm:4.28.0"
     jest: "npm:29.7.0"
     just-curry-it: "npm:5.3.0"
     just-pick: "npm:4.2.0"
     node-notifier: "npm:10.0.1"
-    nostr-tools: "npm:1.17.0"
+    nostr-tools: "npm:2.7.0"
     tracer: "npm:1.3.0"
-    ws: "npm:8.17.0"
+    ws: "npm:8.17.1"
   languageName: unknown
   linkType: soft
 
@@ -4349,22 +4358,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nostr-tools@npm:1.17.0":
-  version: 1.17.0
-  resolution: "nostr-tools@npm:1.17.0"
+"nostr-tools@npm:2.7.0":
+  version: 2.7.0
+  resolution: "nostr-tools@npm:2.7.0"
   dependencies:
-    "@noble/ciphers": "npm:0.2.0"
-    "@noble/curves": "npm:1.1.0"
+    "@noble/ciphers": "npm:^0.5.1"
+    "@noble/curves": "npm:1.2.0"
     "@noble/hashes": "npm:1.3.1"
     "@scure/base": "npm:1.1.1"
     "@scure/bip32": "npm:1.3.1"
     "@scure/bip39": "npm:1.2.1"
+    nostr-wasm: "npm:v0.1.0"
   peerDependencies:
     typescript: ">=5.0.0"
+  dependenciesMeta:
+    nostr-wasm:
+      optional: true
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/c903582f6df9b5a17a02bd2fef5a5bb2ab3e80800d6f6568be8e2c2d75bfc46fc2bcd50f3dd48c775682fe427904099d723141b5bde6578ccf56ff68eb89e3b5
+  checksum: 10/fb3c1e433cee755733d946ca5593f775755640876277f8fcbaef670127f1d1dbd0b597f9129605eb7e3a0457152c50fe674d698ebf54a63f027ec6332441f67b
+  languageName: node
+  linkType: hard
+
+"nostr-wasm@npm:v0.1.0":
+  version: 0.1.0
+  resolution: "nostr-wasm@npm:0.1.0"
+  checksum: 10/d783ae8de024752b5b7b0b65f64a458484e5ca8facd8801d26b21f662b93ae7c1eb0a8e6b6c7ae99719cf09a51c2b8ec3afd77b7a1a8dfe6e640d600bae9c8ca
   languageName: node
   linkType: hard
 
@@ -5633,9 +5653,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.17.0":
-  version: 8.17.0
-  resolution: "ws@npm:8.17.0"
+"ws@npm:8.17.1":
+  version: 8.17.1
+  resolution: "ws@npm:8.17.1"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ">=5.0.2"
@@ -5644,7 +5664,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: 10/5e1dcb0ae70c6e2f158f5b446e0a72a2cd335b07aba73ee1872e9bae1285382286a10e53ed479db21bdd690a5dfd05641a768611ebb236253c62fefa43ef58b4
+  checksum: 10/4264ae92c0b3e59c7e309001e93079b26937aab181835fb7af79f906b22cd33b6196d96556dafb4e985742dd401e99139572242e9847661fdbc96556b9e6902d
   languageName: node
   linkType: hard
 
